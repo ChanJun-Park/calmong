@@ -1,0 +1,16 @@
+# Detekt 설정 (buildUponDefaultConfig = true)
+# 기본 규칙 위에 프로젝트 특화 예외만 명시. 필요해질 때 확장.
+
+naming:
+  FunctionNaming:
+    ignoreAnnotated:
+      - 'Composable'
+
+style:
+  MagicNumber:
+    # Compose 색상 토큰(`val Purple40 = Color(0xFFD0BCFF)`)·dp/sp 토큰처럼
+    # 디자인 상수를 의도적으로 프로퍼티로 선언하는 패턴이 많아 false positive가 잦다.
+    ignorePropertyDeclaration: true
+    ignoreAnnotated:
+      - 'Composable'
+      - 'Preview'
