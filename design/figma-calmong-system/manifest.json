@@ -1,0 +1,8 @@
+{
+  "name": "CalMong Design System Builder",
+  "id": "calmong-design-system-builder",
+  "api": "1.0.0",
+  "main": "code.js",
+  "editorType": ["figma"]
+}
+
