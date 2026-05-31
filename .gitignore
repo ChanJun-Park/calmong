@@ -1,0 +1,95 @@
+# --- Gradle ---
+.gradle/
+build/
+/build
+out/
+!gradle-wrapper.jar
+gradle-app.setting
+
+# --- Android / Kotlin build outputs ---
+*.apk
+*.aab
+*.aar
+*.ap_
+*.dex
+*.class
+/captures
+.externalNativeBuild
+.cxx
+release/
+
+# --- IntelliJ / Android Studio ---
+*.iml
+*.ipr
+*.iws
+.idea/caches/
+.idea/libraries/
+.idea/modules.xml
+.idea/workspace.xml
+.idea/navEditor.xml
+.idea/assetWizardSettings.xml
+.idea/deploymentTargetDropDown.xml
+.idea/deploymentTargetSelector.xml
+.idea/migrations.xml
+.idea/jarRepositories.xml
+.idea/compiler.xml
+.idea/misc.xml
+.idea/gradle.xml
+.idea/runConfigurations.xml
+.idea/inspectionProfiles/
+.idea/dictionaries/
+.idea/shelf/
+.idea/httpRequests/
+.idea/tasks.xml
+.idea/usage.statistics.xml
+
+# --- Local / machine-specific config ---
+local.properties
+/local.properties
+keystore.properties
+secrets.properties
+
+# --- Signing / secrets ---
+*.keystore
+*.jks
+*.p12
+*.pfx
+*.cer
+*.pem
+/key.properties
+
+# --- Environment ---
+.env
+.env.*
+!.env.example
+
+# --- Firebase / Google services (uncomment if you keep these out of VCS) ---
+# google-services.json
+# GoogleService-Info.plist
+
+# --- Logs / temp ---
+*.log
+*.tmp
+*.bak
+*.swp
+hs_err_pid*
+
+# --- Test / coverage ---
+/coverage/
+*.exec
+test-results/
+reports/
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# --- Editors ---
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# --- Claude / AI tooling local state ---
+.claude/settings.local.json
