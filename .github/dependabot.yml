@@ -1,0 +1,51 @@
+version: 2
+updates:
+  # Gradle 의존성 (version catalog `gradle/libs.versions.toml` + build.gradle.kts + 래퍼)
+  - package-ecosystem: "gradle"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "Asia/Seoul"
+    open-pull-requests-limit: 10
+    commit-message:
+      prefix: "#chore"
+      include: "scope"
+    # 비슷한 의존성은 한 PR로 묶어서 리뷰 부담 감소
+    groups:
+      androidx:
+        patterns:
+          - "androidx.*"
+        exclude-patterns:
+          - "androidx.compose.*"
+      compose:
+        patterns:
+          - "androidx.compose.*"
+      kotlin:
+        patterns:
+          - "org.jetbrains.kotlin*"
+          - "org.jetbrains.kotlinx:*"
+      hilt:
+        patterns:
+          - "com.google.dagger*"
+      test:
+        patterns:
+          - "junit*"
+          - "org.junit*"
+          - "io.mockk*"
+          - "app.cash.turbine*"
+          - "org.robolectric*"
+
+  # GitHub Actions 워크플로 (워크플로 추가 후 자동으로 동작)
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "Asia/Seoul"
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "#chore"
+      include: "scope"
