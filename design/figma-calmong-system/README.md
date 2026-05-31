@@ -9,13 +9,14 @@ Naver Calendar screenshots를 분석해 CalMong 캘린더 앱에 적용할 디�
 3. 이 폴더의 `manifest.json`을 선택한다.
 4. `Plugins > Development > CalMong Design System Builder`를 실행한다.
 
-실행하면 `CalMong Design System` 페이지가 생성되고, 아래 산출물이 배치됩니다.
+실행하면 항목별로 별도 Figma 페이지가 생성되고, 아래 산출물이 배치됩니다.
 
-- Color styles: 브랜드, 캘린더 의미 색상, 표면/텍스트/구분선
-- Text styles: Android 캘린더 앱에 맞춘 제목, 본문, 캡션 스케일
-- Foundations: 색상, 타이포, 간격, radius, elevation
-- Components: app bar, FAB, month cell, event pill, schedule row, settings row, checkbox, switch, diary card, habit template row
-- Screen patterns: month view, agenda panel, drawer/settings/input/diary 패턴
+- `00 일반`: 색상, 타이포, 간격, radius, elevation
+- `01 컴포넌트`: app bar, FAB, month cell, event pill, schedule row, settings row, checkbox, switch, diary card, habit template row
+- `02 화면`: month view, agenda panel, settings, diary 화면 패턴
+- `03 문서`: 추출 결정 사항과 Compose 구현 매핑
+
+Color styles와 Text styles는 Figma local styles로 함께 생성됩니다.
 
 ## 추출 기준
 
@@ -32,4 +33,3 @@ Naver Calendar screenshots를 분석해 CalMong 캘린더 앱에 적용할 디�
 ## 다음 단계
 
 Figma에서 생성된 컴포넌트를 검토한 뒤, 실제 앱 구현 시 `:core:designsystem` 모듈로 토큰과 원자 컴포넌트를 옮기면 됩니다.
-

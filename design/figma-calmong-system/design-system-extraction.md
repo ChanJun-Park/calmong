@@ -96,8 +96,8 @@ Android Compose에서는 `sp` 기준으로 사용합니다. Figma 플러그인�
 
 ## Figma 구성 제안
 
-1. `00 Foundations`: colors, type, spacing, radius
-2. `01 Components`: reusable components and variants
-3. `02 Patterns`: month, agenda, drawer, settings, schedule input, diary
-4. `99 References`: 원본 스크린샷을 배치하고 annotation 유지
-
+1. `00 일반`: colors, type, spacing, radius, elevation
+2. `01 컴포넌트`: reusable components and variants
+3. `02 화면`: month, agenda, drawer, settings, schedule input, diary patterns
+4. `03 문서`: 추출 결정 사항, Compose 구현 매핑, 운영 규칙
+5. `99 References`: 원본 스크린샷을 배치하고 annotation 유지

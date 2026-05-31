@@ -1,4 +1,9 @@
-const pageName = "CalMong Design System";
+const pageNames = {
+  overview: "00 일반",
+  components: "01 컴포넌트",
+  screens: "02 화면",
+  docs: "03 문서"
+};
 
 const colors = {
   brandPrimary: "#6B4EE6",
@@ -137,6 +142,75 @@ function sectionTitle(title, caption) {
   frame.fills = [];
   frame.appendChild(textNode(title, "Title/Large"));
   frame.appendChild(textNode(caption, "Caption", colors.secondaryText));
+  return frame;
+}
+
+async function preparePage(name) {
+  let page = figma.root.children.find((child) => child.type === "PAGE" && child.name === name);
+  if (!page) {
+    page = figma.createPage();
+    page.name = name;
+  }
+  await figma.setCurrentPageAsync(page);
+  for (const child of [...page.children]) child.remove();
+  return page;
+}
+
+function pageRoot(name, width = 1600, height = 1600) {
+  const root = fixedFrame(name, width, height, "#FAFAFB");
+  layout(root, "HORIZONTAL", 48, 48);
+  root.layoutWrap = "WRAP";
+  return root;
+}
+
+function introBoard() {
+  const intro = fixedFrame("Intro", 720, 260, colors.surface);
+  layout(intro, "VERTICAL", 14, 28);
+  intro.cornerRadius = 12;
+  intro.strokes = solid(colors.border);
+  intro.strokeWeight = 1;
+  intro.appendChild(textNode("CalMong Design System", "Title/Large"));
+  intro.appendChild(textNode("캘린더 앱 화면에서 반복되는 구조를 토큰, 컴포넌트, 화면 패턴으로 추출한 초안입니다.", "Body/Medium", colors.secondaryText));
+  intro.appendChild(textNode("Page structure: 00 일반, 01 컴포넌트, 02 화면, 03 문서.", "Caption", colors.secondaryText));
+  intro.appendChild(textNode("Generated from local screenshots: month, agenda, drawer, settings, schedule input, diary, habit flows.", "Caption", colors.secondaryText));
+  return intro;
+}
+
+function documentationBoard() {
+  const frame = fixedFrame("Design System Guide", 960, 1);
+  layout(frame, "VERTICAL", 24, 0);
+  frame.fills = [];
+  frame.appendChild(sectionTitle("Design System Guide", "Extraction decisions and implementation mapping for Compose."));
+
+  const decisions = fixedFrame("Extraction Decisions", 960, 360, colors.surface);
+  layout(decisions, "VERTICAL", 14, 24);
+  decisions.cornerRadius = 8;
+  decisions.strokes = solid(colors.border);
+  decisions.strokeWeight = 1;
+  [
+    "1. 일반 페이지에는 구현 전역 토큰만 둡니다: 색상, 타이포, 간격, radius, elevation.",
+    "2. 컴포넌트 페이지에는 Compose로 재사용할 원자/분자 컴포넌트 후보만 둡니다.",
+    "3. 화면 페이지에는 실제 앱 조립 검증용 패턴을 둡니다. 직접 재사용보다 구성과 밀도 확인이 목적입니다.",
+    "4. 일정 색상은 브랜드 색상과 분리합니다. 사용자가 만든 캘린더 색상이 앱 primary color를 오염시키지 않도록 합니다.",
+    "5. 고밀도 캘린더 화면에서는 카드 장식을 줄이고 line, dot, rail, pill로 정보 계층을 만듭니다.",
+    "6. Compose 구현 시 우선순위는 tokens -> primitive controls -> calendar-specific components -> screen patterns 순서입니다."
+  ].forEach((item) => decisions.appendChild(textNode(item, "Body/Medium", colors.text)));
+  frame.appendChild(decisions);
+
+  const mapping = fixedFrame("Compose Mapping", 960, 280, colors.surface);
+  layout(mapping, "VERTICAL", 14, 24);
+  mapping.cornerRadius = 8;
+  mapping.strokes = solid(colors.border);
+  mapping.strokeWeight = 1;
+  [
+    "Color.kt: semantic colors and calendar category colors",
+    "Type.kt: typography scale aligned with Figma text styles",
+    "Spacing.kt: 4dp spacing scale and radius tokens",
+    "Calendar components: MonthGrid, DateCell, EventPill, AgendaRow",
+    "Common controls: CalMongFab, TodayPill, CalMongSwitch, CalMongCheckbox",
+    "List components: SettingsRow, CalendarRow, HabitTemplateRow, DiaryCard"
+  ].forEach((item) => mapping.appendChild(textNode(item, "Body/Medium", colors.text)));
+  frame.appendChild(mapping);
   return frame;
 }
 
@@ -621,36 +695,32 @@ async function main() {
   createPaintStyles();
   createTextStyles();
 
-  let page = figma.root.children.find((child) => child.type === "PAGE" && child.name === pageName);
-  if (!page) {
-    page = figma.createPage();
-    page.name = pageName;
-  }
-  figma.currentPage = page;
-  for (const child of [...page.children]) child.remove();
+  const overviewPage = await preparePage(pageNames.overview);
+  const overviewRoot = pageRoot("00 일반 / Foundations", 1600, 1400);
+  overviewPage.appendChild(overviewRoot);
+  overviewRoot.appendChild(introBoard());
+  overviewRoot.appendChild(colorBoard());
+  overviewRoot.appendChild(typographyBoard());
+  overviewRoot.appendChild(spacingBoard());
 
-  const root = fixedFrame("CalMong Design System", 2400, 2200, "#FAFAFB");
-  layout(root, "HORIZONTAL", 48, 48);
-  root.layoutWrap = "WRAP";
-  page.appendChild(root);
+  const componentPage = await preparePage(pageNames.components);
+  const componentRoot = pageRoot("01 컴포넌트 / Components", 1200, 1600);
+  componentPage.appendChild(componentRoot);
+  componentRoot.appendChild(componentsBoard());
 
-  const intro = fixedFrame("Intro", 720, 220, colors.surface);
-  layout(intro, "VERTICAL", 14, 28);
-  intro.cornerRadius = 12;
-  intro.strokes = solid(colors.border);
-  intro.strokeWeight = 1;
-  intro.appendChild(textNode("CalMong Design System", "Title/Large"));
-  intro.appendChild(textNode("캘린더 앱 화면에서 반복되는 구조를 토큰, 컴포넌트, 화면 패턴으로 추출한 초안입니다.", "Body/Medium", colors.secondaryText));
-  intro.appendChild(textNode("Generated from local screenshots: month, agenda, drawer, settings, schedule input, diary, habit flows.", "Caption", colors.secondaryText));
-  root.appendChild(intro);
-  root.appendChild(colorBoard());
-  root.appendChild(typographyBoard());
-  root.appendChild(spacingBoard());
-  root.appendChild(componentsBoard());
-  root.appendChild(patternsBoard());
+  const screenPage = await preparePage(pageNames.screens);
+  const screenRoot = pageRoot("02 화면 / Screen Patterns", 1500, 1200);
+  screenPage.appendChild(screenRoot);
+  screenRoot.appendChild(patternsBoard());
 
-  figma.viewport.scrollAndZoomIntoView([root]);
-  figma.closePlugin("CalMong Design System page generated.");
+  const docsPage = await preparePage(pageNames.docs);
+  const docsRoot = pageRoot("03 문서 / Guide", 1200, 1000);
+  docsPage.appendChild(docsRoot);
+  docsRoot.appendChild(documentationBoard());
+
+  await figma.setCurrentPageAsync(overviewPage);
+  figma.viewport.scrollAndZoomIntoView([overviewRoot]);
+  figma.closePlugin("CalMong Design System pages generated.");
 }
 
 main().catch((error) => {
