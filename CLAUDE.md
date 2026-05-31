@@ -3,8 +3,77 @@
 목표 달성을 도와주는 AI agent pet이 함께하는 캘린더 앱.
 
 ## 스택
-- Android (Kotlin), Gradle Kotlin DSL
-- 자세한 의존성·아키텍처는 확정되는 대로 이 문서에 누적한다
+- 언어/플랫폼: Kotlin, Android (compileSdk·minSdk·targetSdk는 `gradle/libs.versions.toml`을 단일 소스로 둔다)
+- UI: Jetpack Compose + Material3, 타입 안전 Navigation
+- 비동기: Coroutines + Flow
+- DI: Dagger/Hilt
+- 영속화: Room (관계형), DataStore (Preferences)
+- 로깅: Timber
+- 빌드: Gradle Kotlin DSL + Version Catalog + `build-logic` convention plugin
+- 정적 분석/포맷: Spotless Gradle plugin(ktlint 적용) + Detekt
+- 테스트: JUnit, MockK, Turbine, Compose UI Test
+
+## 아키텍처
+**Clean Architecture** — 의존 방향은 `presentation → domain ← data`. 안쪽 레이어(domain)는 바깥을 모른다.
+
+- **presentation**: Compose UI + ViewModel. `StateFlow<UiState>` 단일 상태를 노출하고, 이벤트는 함수 호출(intent)로 받는 단방향 데이터 흐름(UDF).
+- **domain**: 순수 Kotlin. UseCase + 도메인 모델 + Repository **인터페이스**. Android 의존 금지.
+- **data**: Repository 구현, Room/DataStore/Network DataSource. domain 인터페이스를 구현해 외부에서 주입.
+
+### DI (Hilt)
+- 모듈별 `@Module @InstallIn(...)`로 의존성 제공.
+- Coroutine Dispatcher는 `DispatcherProvider`로 추상화해 주입 (테스트에서 `TestDispatcher`로 교체).
+- `@HiltViewModel` / `@AndroidEntryPoint`는 프레임워크 클래스에만 적용.
+
+## 모듈 구조
+Now in Android 구조를 참고한다. **처음부터 다 만들지 말고 실제로 필요해질 때 생성**한다.
+
+- `:app` — 엔트리, 네비게이션 그래프, 테마 조립
+- `:core:designsystem` — Material3 토큰·테마·원자 컴포넌트
+- `:core:ui` — feature 간 공유 Compose 컴포넌트
+- `:core:common` — 유틸리티·`DispatcherProvider`
+- `:core:domain` — feature 간 공유 도메인 (필요 시점에만)
+- `:core:data` — 공통 Repository 구현
+- `:core:database` / `:core:datastore` — 영속화 인프라
+- `:core:testing` — 테스트 픽스처, fake 구현
+- `:feature:<name>` — 화면 단위 feature (presentation 위주, 필요 시 자체 domain/data 보유)
+
+새 feature는 `:feature:<name>` 모듈을 추가하고 필요한 `:core:*`만 의존한다.
+
+## 빌드 / Convention Plugin
+- 모든 모듈이 공유하는 Gradle 설정·의존성은 `build-logic/convention/`의 convention plugin으로 정의해 재사용한다.
+- 권장 plugin 네이밍:
+  - `calmong.android.application`, `calmong.android.library`, `calmong.android.feature`
+  - `calmong.android.library.compose`, `calmong.android.hilt`
+  - `calmong.jvm.library` (순수 Kotlin 모듈: domain 등)
+  - `calmong.android.test`, `calmong.jvm.test`
+- 모든 의존성과 버전은 `gradle/libs.versions.toml`로 단일화한다. 모듈 빌드 스크립트는 catalog alias만 참조 (직접 좌표/버전 명시 금지).
+
+## 테스트 / TDD
+- **사이클**: 실패하는 테스트 작성 → 최소 코드로 통과 → 리팩토링.
+- **피라미드**
+  - 단위 테스트(JVM, 빠르고 다수): domain / data / ViewModel
+  - 통합 테스트: Repository ↔ DataSource 결합
+  - UI 테스트(Compose UI Test): 화면 핵심 시나리오만 (탐색적 UI 작업까지 강제 TDD는 적용하지 않음)
+- **도구**: JUnit, MockK, Turbine, Compose UI Test, Robolectric(필요 시).
+- **규칙**
+  - 도메인/데이터 로직은 Android 의존 없이 JVM 테스트로 검증.
+  - 코루틴 테스트는 `runTest` + `TestDispatcher` 조합 사용.
+  - 테스트 더블은 fake(`:core:testing`에 위치) > mock 순으로 선호.
+
+## 코드 규칙
+- **Kotlin 관용구**
+  - 불변성 기본 (`val`, `data class`, 읽기 전용 컬렉션).
+  - 상태/이벤트는 `sealed class` / `sealed interface` + 망라적 `when`.
+  - 실패는 예외 대신 `Result` 또는 도메인 `Either` 타입으로 표현하고 UI 경계에서 매핑.
+- **Compose**
+  - 상태 호이스팅: stateless composable이 기본, 상태는 위로 끌어올린다.
+  - 파라미터 안정성 확보 — 불변 자료형, 필요 시 `@Immutable`/`@Stable`.
+  - 컬렉션은 `kotlinx.collections.immutable` 권장.
+  - 사용자 노출 문자열은 항상 `stringResource(...)`로 (i18n 대비).
+- **로깅**: Timber 사용. `Timber.plant(...)`는 `:app` 진입점에서 한 번만 (Debug 빌드는 `DebugTree`, Release 빌드는 별도 트리). 사용자 노출 메시지는 로깅과 별개로 string resource로.
+- **원칙**: SOLID / KISS / DRY / YAGNI. 단, **추측성 추상화 금지** — 중복이 실제로 아플 때 추상화한다.
+- **정적 분석 / 포맷**: Spotless Gradle plugin으로 ktlint를 적용 + Detekt. 둘 다 convention plugin으로 묶어 모든 모듈에 일관 적용하고, CI에서 검증.
 
 ## 작업 규칙
 
