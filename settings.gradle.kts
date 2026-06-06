@@ -25,3 +25,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "CalMong"
 include(":app")
+include(":core:designsystem")
