@@ -1,14 +1,9 @@
 package calmong
 
 import com.android.build.api.dsl.ApplicationExtension
-import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
-import org.gradle.api.artifacts.VersionCatalogsExtension
 import org.gradle.kotlin.dsl.configure
-import org.gradle.kotlin.dsl.getByType
-import org.jetbrains.kotlin.gradle.dsl.JvmTarget
-import org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension
 
 class AndroidApplicationConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) = with(target) {
@@ -20,35 +15,10 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
             apply("calmong.detekt")
         }
 
-        val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
-        val compileSdkMajor = libs.findVersion("compileSdk").get().requiredVersion.toInt()
-        val compileSdkMinor = libs.findVersion("compileSdkMinor").get().requiredVersion.toInt()
-        val minSdkVer = libs.findVersion("minSdk").get().requiredVersion.toInt()
-        val targetSdkVer = libs.findVersion("targetSdk").get().requiredVersion.toInt()
-        val javaVer = JavaVersion.toVersion(libs.findVersion("javaVersion").get().requiredVersion)
-
         extensions.configure<ApplicationExtension> {
-            compileSdk {
-                version =
-                    release(compileSdkMajor) {
-                        minorApiLevel = compileSdkMinor
-                    }
-            }
-            defaultConfig {
-                minSdk = minSdkVer
-                targetSdk = targetSdkVer
-                testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-            }
-            compileOptions {
-                sourceCompatibility = javaVer
-                targetCompatibility = javaVer
-            }
-        }
-
-        extensions.configure<KotlinAndroidProjectExtension> {
-            compilerOptions {
-                jvmTarget.set(JvmTarget.fromTarget(javaVer.toString()))
-            }
+            configureKotlinAndroid(this)
+            defaultConfig.targetSdk = libs.findVersion("targetSdk").get().requiredVersion.toInt()
+            defaultConfig.testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         }
     }
 }

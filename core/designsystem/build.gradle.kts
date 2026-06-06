@@ -1,4 +1,5 @@
 plugins {
+    id("calmong.android.library")
     id("calmong.android.library.compose")
 }
 
