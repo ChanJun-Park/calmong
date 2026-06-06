@@ -30,5 +30,13 @@ gradlePlugin {
             id = "calmong.android.library.compose"
             implementationClass = "calmong.AndroidLibraryComposeConventionPlugin"
         }
+        register("androidApplication") {
+            id = "calmong.android.application"
+            implementationClass = "calmong.AndroidApplicationConventionPlugin"
+        }
+        register("androidApplicationCompose") {
+            id = "calmong.android.application.compose"
+            implementationClass = "calmong.AndroidApplicationComposeConventionPlugin"
+        }
     }
 }
