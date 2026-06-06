@@ -16,27 +16,27 @@ gradlePlugin {
     plugins {
         register("spotless") {
             id = "calmong.spotless"
-            implementationClass = "calmong.SpotlessConventionPlugin"
+            implementationClass = "SpotlessConventionPlugin"
         }
         register("detekt") {
             id = "calmong.detekt"
-            implementationClass = "calmong.DetektConventionPlugin"
+            implementationClass = "DetektConventionPlugin"
         }
         register("androidLibrary") {
             id = "calmong.android.library"
-            implementationClass = "calmong.AndroidLibraryConventionPlugin"
+            implementationClass = "AndroidLibraryConventionPlugin"
         }
         register("androidLibraryCompose") {
             id = "calmong.android.library.compose"
-            implementationClass = "calmong.AndroidLibraryComposeConventionPlugin"
+            implementationClass = "AndroidLibraryComposeConventionPlugin"
         }
         register("androidApplication") {
             id = "calmong.android.application"
-            implementationClass = "calmong.AndroidApplicationConventionPlugin"
+            implementationClass = "AndroidApplicationConventionPlugin"
         }
         register("androidApplicationCompose") {
             id = "calmong.android.application.compose"
-            implementationClass = "calmong.AndroidApplicationComposeConventionPlugin"
+            implementationClass = "AndroidApplicationComposeConventionPlugin"
         }
     }
 }

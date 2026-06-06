@@ -1,6 +1,6 @@
-package calmong
-
 import com.android.build.api.dsl.ApplicationExtension
+import com.jingom.calmong.configureKotlinAndroid
+import com.jingom.calmong.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure

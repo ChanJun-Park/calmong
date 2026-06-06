@@ -1,6 +1,5 @@
-package calmong
-
 import com.android.build.api.dsl.LibraryExtension
+import com.jingom.calmong.configureAndroidCompose
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
