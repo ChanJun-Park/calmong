@@ -5,7 +5,7 @@
 제품 코드에서는 `border(1.dp, …)`처럼 두께를 직접 쓰지 않고 semantic 역할을 사용한다.
 
 Figma 문서:
-[Design System / Stroke System](https://www.figma.com/design/y1auG7nkgZKt00DtduF90Q/Design-System?node-id=5-421)
+[Design System / Stroke System](https://www.figma.com/design/y1auG7nkgZKt00DtduF90Q/Design-System?node-id=79-2)
 
 ```text
 primitive borderWidth        semantic strokeWidth         component
