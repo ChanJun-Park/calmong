@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -122,7 +121,7 @@ private fun SwatchRow(
                 Surface(
                     modifier = Modifier.size(56.dp),
                     color = color,
-                    shape = RoundedCornerShape(8.dp),
+                    shape = CalMongTheme.shapes.control.default,
                     border =
                         BorderStroke(
                             width = 1.dp,

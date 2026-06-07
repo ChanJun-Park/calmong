@@ -6,6 +6,10 @@
 [`../COLOR_SYSTEM.md`](../COLOR_SYSTEM.md)를 기준으로 한다. 이 문서는 토큰 구조와
 Figma 동기화 절차를 설명한다.
 
+Radius primitive와 semantic shape 사용 규칙은
+[`../RADIUS_SYSTEM.md`](../RADIUS_SYSTEM.md)를 참고한다.
+Figma alias 원본은 [`semantic.radius.json`](semantic.radius.json)이다.
+
 ```
 primitive (raw 팔레트)        →  semantic (의미 부여)         →  component
 Tailwind indigo/600 …            primary.background.default       Button 배경

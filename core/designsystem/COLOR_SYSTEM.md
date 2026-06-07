@@ -4,6 +4,8 @@ CalMong의 색상 시스템은 색상 값이 아니라 **역할(role)** 을 기�
 화면과 컴포넌트는 Tailwind primitive를 직접 참조하지 않고
 `CalMongTheme.colors`의 semantic 토큰을 사용해야 한다.
 
+Shape와 radius 사용 규칙은 [`RADIUS_SYSTEM.md`](RADIUS_SYSTEM.md)를 참고한다.
+
 ```text
 primitive                  semantic                          component
 Tailwind Indigo600    ->   primary.background.default  ->   Filled Button

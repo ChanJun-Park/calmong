@@ -1,0 +1,60 @@
+{
+  "control": {
+    "compact": {
+      "$type": "number",
+      "$value": "{md}"
+    },
+    "default": {
+      "$type": "number",
+      "$value": "{lg}"
+    },
+    "large": {
+      "$type": "number",
+      "$value": "{xl}"
+    },
+    "pill": {
+      "$type": "number",
+      "$value": "{full}"
+    }
+  },
+  "surface": {
+    "small": {
+      "$type": "number",
+      "$value": "{lg}"
+    },
+    "card": {
+      "$type": "number",
+      "$value": "{xl}"
+    },
+    "elevated": {
+      "$type": "number",
+      "$value": "{2xl}"
+    },
+    "sheet": {
+      "$type": "number",
+      "$value": "{3xl}"
+    },
+    "dialog": {
+      "$type": "number",
+      "$value": "{3xl}"
+    }
+  },
+  "content": {
+    "thumbnail": {
+      "$type": "number",
+      "$value": "{lg}"
+    },
+    "image": {
+      "$type": "number",
+      "$value": "{xl}"
+    },
+    "avatar": {
+      "$type": "number",
+      "$value": "{full}"
+    },
+    "badge": {
+      "$type": "number",
+      "$value": "{full}"
+    }
+  }
+}

@@ -1,0 +1,92 @@
+{
+    "none": {
+        "$extensions": {
+            "com.figma.scopes": [
+                "CORNER_RADIUS"
+            ],
+            "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": 0
+    },
+    "sm": {
+        "$extensions": {
+            "com.figma.scopes": [
+                "CORNER_RADIUS"
+            ],
+            "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": 2
+    },
+    "DEFAULT": {
+        "$extensions": {
+            "com.figma.scopes": [
+                "CORNER_RADIUS"
+            ],
+            "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": 4
+    },
+    "md": {
+        "$extensions": {
+            "com.figma.scopes": [
+                "CORNER_RADIUS"
+            ],
+            "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": 6
+    },
+    "lg": {
+        "$extensions": {
+            "com.figma.scopes": [
+                "CORNER_RADIUS"
+            ],
+            "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": 8
+    },
+    "xl": {
+        "$extensions": {
+            "com.figma.scopes": [
+                "CORNER_RADIUS"
+            ],
+            "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": 12
+    },
+    "2xl": {
+        "$extensions": {
+            "com.figma.scopes": [
+                "CORNER_RADIUS"
+            ],
+            "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": 16
+    },
+    "3xl": {
+        "$extensions": {
+            "com.figma.scopes": [
+                "CORNER_RADIUS"
+            ],
+            "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": 24
+    },
+    "full": {
+        "$extensions": {
+            "com.figma.scopes": [
+                "CORNER_RADIUS"
+            ],
+            "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": 999
+    }
+}
