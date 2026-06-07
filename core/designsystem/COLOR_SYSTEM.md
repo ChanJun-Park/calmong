@@ -1,5 +1,8 @@
 # CalMong Color System
 
+Surface 색을 Light/Dark elevation과 조합하는 규칙은
+[`ELEVATION_SYSTEM.md`](ELEVATION_SYSTEM.md)를 함께 따른다.
+
 CalMong의 색상 시스템은 색상 값이 아니라 **역할(role)** 을 기준으로 사용한다.
 화면과 컴포넌트는 Tailwind primitive를 직접 참조하지 않고
 `CalMongTheme.colors`의 semantic 토큰을 사용해야 한다.

@@ -10,6 +10,12 @@ Radius primitive와 semantic shape 사용 규칙은
 [`../RADIUS_SYSTEM.md`](../RADIUS_SYSTEM.md)를 참고한다.
 Figma alias 원본은 [`semantic.radius.json`](semantic.radius.json)이다.
 
+Shadow primitive와 Light/Dark semantic elevation 사용 규칙은
+[`../ELEVATION_SYSTEM.md`](../ELEVATION_SYSTEM.md)를 참고한다.
+Figma alias 원본은
+[`semantic.elevation.light.json`](semantic.elevation.light.json)과
+[`semantic.elevation.dark.json`](semantic.elevation.dark.json)이다.
+
 ```
 primitive (raw 팔레트)        →  semantic (의미 부여)         →  component
 Tailwind indigo/600 …            primary.background.default       Button 배경

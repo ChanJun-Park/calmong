@@ -1,0 +1,87 @@
+{
+  "flat": {
+    "surface": { "$type": "color", "$value": "{neutral.background.default}" },
+    "layer1": {
+      "color": { "$type": "color", "$value": "{none.color}" },
+      "offsetX": { "$type": "number", "$value": "{none.offsetX}" },
+      "offsetY": { "$type": "number", "$value": "{none.offsetY}" },
+      "radius": { "$type": "number", "$value": "{none.radius}" },
+      "spread": { "$type": "number", "$value": "{none.spread}" }
+    },
+    "layer2": {
+      "color": { "$type": "color", "$value": "{none.color}" },
+      "offsetX": { "$type": "number", "$value": "{none.offsetX}" },
+      "offsetY": { "$type": "number", "$value": "{none.offsetY}" },
+      "radius": { "$type": "number", "$value": "{none.radius}" },
+      "spread": { "$type": "number", "$value": "{none.spread}" }
+    }
+  },
+  "raised1": {
+    "surface": { "$type": "color", "$value": "{neutral.background.raised1}" },
+    "layer1": {
+      "color": { "$type": "color", "$value": "{none.color}" },
+      "offsetX": { "$type": "number", "$value": "{none.offsetX}" },
+      "offsetY": { "$type": "number", "$value": "{none.offsetY}" },
+      "radius": { "$type": "number", "$value": "{none.radius}" },
+      "spread": { "$type": "number", "$value": "{none.spread}" }
+    },
+    "layer2": {
+      "color": { "$type": "color", "$value": "{none.color}" },
+      "offsetX": { "$type": "number", "$value": "{none.offsetX}" },
+      "offsetY": { "$type": "number", "$value": "{none.offsetY}" },
+      "radius": { "$type": "number", "$value": "{none.radius}" },
+      "spread": { "$type": "number", "$value": "{none.spread}" }
+    }
+  },
+  "raised2": {
+    "surface": { "$type": "color", "$value": "{neutral.background.raised2}" },
+    "layer1": {
+      "color": { "$type": "color", "$value": "{none.color}" },
+      "offsetX": { "$type": "number", "$value": "{none.offsetX}" },
+      "offsetY": { "$type": "number", "$value": "{none.offsetY}" },
+      "radius": { "$type": "number", "$value": "{none.radius}" },
+      "spread": { "$type": "number", "$value": "{none.spread}" }
+    },
+    "layer2": {
+      "color": { "$type": "color", "$value": "{none.color}" },
+      "offsetX": { "$type": "number", "$value": "{none.offsetX}" },
+      "offsetY": { "$type": "number", "$value": "{none.offsetY}" },
+      "radius": { "$type": "number", "$value": "{none.radius}" },
+      "spread": { "$type": "number", "$value": "{none.spread}" }
+    }
+  },
+  "overlay": {
+    "surface": { "$type": "color", "$value": "{neutral.background.raised2}" },
+    "layer1": {
+      "color": { "$type": "color", "$value": "{sm.color1}" },
+      "offsetX": { "$type": "number", "$value": "{sm.offsetX1}" },
+      "offsetY": { "$type": "number", "$value": "{sm.offsetY1}" },
+      "radius": { "$type": "number", "$value": "{sm.radius1}" },
+      "spread": { "$type": "number", "$value": "{sm.spread1}" }
+    },
+    "layer2": {
+      "color": { "$type": "color", "$value": "{sm.color2}" },
+      "offsetX": { "$type": "number", "$value": "{sm.offsetX2}" },
+      "offsetY": { "$type": "number", "$value": "{sm.offsetY2}" },
+      "radius": { "$type": "number", "$value": "{sm.radius2}" },
+      "spread": { "$type": "number", "$value": "{sm.spread2}" }
+    }
+  },
+  "modal": {
+    "surface": { "$type": "color", "$value": "{neutral.background.raised2}" },
+    "layer1": {
+      "color": { "$type": "color", "$value": "{xs.color}" },
+      "offsetX": { "$type": "number", "$value": "{xs.offsetX}" },
+      "offsetY": { "$type": "number", "$value": "{xs.offsetY}" },
+      "radius": { "$type": "number", "$value": "{xs.radius}" },
+      "spread": { "$type": "number", "$value": "{xs.spread}" }
+    },
+    "layer2": {
+      "color": { "$type": "color", "$value": "{none.color}" },
+      "offsetX": { "$type": "number", "$value": "{none.offsetX}" },
+      "offsetY": { "$type": "number", "$value": "{none.offsetY}" },
+      "radius": { "$type": "number", "$value": "{none.radius}" },
+      "spread": { "$type": "number", "$value": "{none.spread}" }
+    }
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "flat": {
+    "surface": { "$type": "color", "$value": "{neutral.background.default}" },
+    "layer1": {
+      "color": { "$type": "color", "$value": "{none.color}" },
+      "offsetX": { "$type": "number", "$value": "{none.offsetX}" },
+      "offsetY": { "$type": "number", "$value": "{none.offsetY}" },
+      "radius": { "$type": "number", "$value": "{none.radius}" },
+      "spread": { "$type": "number", "$value": "{none.spread}" }
+    },
+    "layer2": {
+      "color": { "$type": "color", "$value": "{none.color}" },
+      "offsetX": { "$type": "number", "$value": "{none.offsetX}" },
+      "offsetY": { "$type": "number", "$value": "{none.offsetY}" },
+      "radius": { "$type": "number", "$value": "{none.radius}" },
+      "spread": { "$type": "number", "$value": "{none.spread}" }
+    }
+  },
+  "raised1": {
+    "surface": { "$type": "color", "$value": "{neutral.background.default}" },
+    "layer1": {
+      "color": { "$type": "color", "$value": "{sm.color1}" },
+      "offsetX": { "$type": "number", "$value": "{sm.offsetX1}" },
+      "offsetY": { "$type": "number", "$value": "{sm.offsetY1}" },
+      "radius": { "$type": "number", "$value": "{sm.radius1}" },
+      "spread": { "$type": "number", "$value": "{sm.spread1}" }
+    },
+    "layer2": {
+      "color": { "$type": "color", "$value": "{sm.color2}" },
+      "offsetX": { "$type": "number", "$value": "{sm.offsetX2}" },
+      "offsetY": { "$type": "number", "$value": "{sm.offsetY2}" },
+      "radius": { "$type": "number", "$value": "{sm.radius2}" },
+      "spread": { "$type": "number", "$value": "{sm.spread2}" }
+    }
+  },
+  "raised2": {
+    "surface": { "$type": "color", "$value": "{neutral.background.default}" },
+    "layer1": {
+      "color": { "$type": "color", "$value": "{DEFAULT.color1}" },
+      "offsetX": { "$type": "number", "$value": "{DEFAULT.offsetX1}" },
+      "offsetY": { "$type": "number", "$value": "{DEFAULT.offsetY1}" },
+      "radius": { "$type": "number", "$value": "{DEFAULT.radius1}" },
+      "spread": { "$type": "number", "$value": "{DEFAULT.spread1}" }
+    },
+    "layer2": {
+      "color": { "$type": "color", "$value": "{DEFAULT.color2}" },
+      "offsetX": { "$type": "number", "$value": "{DEFAULT.offsetX2}" },
+      "offsetY": { "$type": "number", "$value": "{DEFAULT.offsetY2}" },
+      "radius": { "$type": "number", "$value": "{DEFAULT.radius2}" },
+      "spread": { "$type": "number", "$value": "{DEFAULT.spread2}" }
+    }
+  },
+  "overlay": {
+    "surface": { "$type": "color", "$value": "{neutral.background.default}" },
+    "layer1": {
+      "color": { "$type": "color", "$value": "{lg.color1}" },
+      "offsetX": { "$type": "number", "$value": "{lg.offsetX1}" },
+      "offsetY": { "$type": "number", "$value": "{lg.offsetY1}" },
+      "radius": { "$type": "number", "$value": "{lg.radius1}" },
+      "spread": { "$type": "number", "$value": "{lg.spread1}" }
+    },
+    "layer2": {
+      "color": { "$type": "color", "$value": "{lg.color2}" },
+      "offsetX": { "$type": "number", "$value": "{lg.offsetX2}" },
+      "offsetY": { "$type": "number", "$value": "{lg.offsetY2}" },
+      "radius": { "$type": "number", "$value": "{lg.radius2}" },
+      "spread": { "$type": "number", "$value": "{lg.spread2}" }
+    }
+  },
+  "modal": {
+    "surface": { "$type": "color", "$value": "{neutral.background.default}" },
+    "layer1": {
+      "color": { "$type": "color", "$value": "{2xl.color}" },
+      "offsetX": { "$type": "number", "$value": "{2xl.offsetX}" },
+      "offsetY": { "$type": "number", "$value": "{2xl.offsetY}" },
+      "radius": { "$type": "number", "$value": "{2xl.radius}" },
+      "spread": { "$type": "number", "$value": "{2xl.spread}" }
+    },
+    "layer2": {
+      "color": { "$type": "color", "$value": "{none.color}" },
+      "offsetX": { "$type": "number", "$value": "{none.offsetX}" },
+      "offsetY": { "$type": "number", "$value": "{none.offsetY}" },
+      "radius": { "$type": "number", "$value": "{none.radius}" },
+      "spread": { "$type": "number", "$value": "{none.spread}" }
+    }
+  }
+}

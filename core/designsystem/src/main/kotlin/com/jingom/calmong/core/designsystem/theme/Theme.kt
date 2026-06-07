@@ -12,6 +12,10 @@ import com.jingom.calmong.core.designsystem.theme.color.CalMongColorScheme
 import com.jingom.calmong.core.designsystem.theme.color.LocalCalMongColorScheme
 import com.jingom.calmong.core.designsystem.theme.color.darkCalMongColorScheme
 import com.jingom.calmong.core.designsystem.theme.color.lightCalMongColorScheme
+import com.jingom.calmong.core.designsystem.theme.elevation.CalMongElevations
+import com.jingom.calmong.core.designsystem.theme.elevation.LocalCalMongElevations
+import com.jingom.calmong.core.designsystem.theme.elevation.darkCalMongElevations
+import com.jingom.calmong.core.designsystem.theme.elevation.lightCalMongElevations
 import com.jingom.calmong.core.designsystem.theme.shape.CalMongShapes
 import com.jingom.calmong.core.designsystem.theme.shape.DefaultCalMongShapes
 import com.jingom.calmong.core.designsystem.theme.shape.LocalCalMongShapes
@@ -31,9 +35,18 @@ fun CalMongTheme(
             colorScheme.toMaterialColorScheme(darkTheme)
         }
     val materialShapes = remember { calMongMaterialShapes() }
+    val elevations =
+        remember(colorScheme, darkTheme) {
+            if (darkTheme) {
+                darkCalMongElevations(colorScheme)
+            } else {
+                lightCalMongElevations(colorScheme)
+            }
+        }
     CompositionLocalProvider(
         LocalCalMongColorScheme provides colorScheme,
         LocalCalMongShapes provides DefaultCalMongShapes,
+        LocalCalMongElevations provides elevations,
     ) {
         MaterialTheme(
             colorScheme = materialColorScheme,
@@ -47,7 +60,8 @@ fun CalMongTheme(
  * CalMong design token 진입점.
  *
  * `CalMongTheme.colors.primary.background.default`,
- * `CalMongTheme.shapes.surface.card`처럼 접근한다.
+ * `CalMongTheme.shapes.surface.card`,
+ * `CalMongTheme.elevations.raised1`처럼 접근한다.
  * Material3 컴포넌트는 [CalMongTheme]이 매핑해준 `MaterialTheme.colorScheme`을 그대로 쓰고,
  * CalMong 고유 토큰이 필요하면 이 accessor를 쓴다.
  */
@@ -61,6 +75,11 @@ object CalMongTheme {
         @Composable
         @ReadOnlyComposable
         get() = LocalCalMongShapes.current
+
+    val elevations: CalMongElevations
+        @Composable
+        @ReadOnlyComposable
+        get() = LocalCalMongElevations.current
 }
 
 /**

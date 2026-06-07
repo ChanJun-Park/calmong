@@ -1,0 +1,772 @@
+{
+    "none": {
+        "color": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_COLOR"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "color",
+            "$value": "#00000000"
+        },
+        "offsetX": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 0
+        },
+        "offsetY": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 0
+        },
+        "radius": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 0
+        },
+        "spread": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 0
+        }
+    },
+    "2xs": {
+        "color": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_COLOR"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "color",
+            "$value": "#0000000d"
+        },
+        "offsetX": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 0
+        },
+        "offsetY": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 1
+        },
+        "radius": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 0
+        },
+        "spread": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 0
+        }
+    },
+    "xs": {
+        "color": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_COLOR"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "color",
+            "$value": "#0000000d"
+        },
+        "offsetX": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 0
+        },
+        "offsetY": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 1
+        },
+        "radius": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 2
+        },
+        "spread": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 0
+        }
+    },
+    "sm": {
+        "color1": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_COLOR"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "color",
+            "$value": "#0000001a"
+        },
+        "color2": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_COLOR"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "color",
+            "$value": "#0000001a"
+        },
+        "offsetX1": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 0
+        },
+        "offsetY1": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 1
+        },
+        "radius1": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 3
+        },
+        "spread1": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 0
+        },
+        "offsetX2": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 0
+        },
+        "offsetY2": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 1
+        },
+        "radius2": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 2
+        },
+        "spread2": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": -1
+        }
+    },
+    "DEFAULT": {
+        "color1": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_COLOR"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "color",
+            "$value": "#0000001a"
+        },
+        "color2": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_COLOR"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "color",
+            "$value": "#0000001a"
+        },
+        "offsetX1": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 0
+        },
+        "offsetY1": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 4
+        },
+        "radius1": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 6
+        },
+        "spread1": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": -1
+        },
+        "offsetX2": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 0
+        },
+        "offsetY2": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 2
+        },
+        "radius2": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 4
+        },
+        "spread2": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": -2
+        }
+    },
+    "md": {
+        "color1": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_COLOR"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "color",
+            "$value": "#0000001a"
+        },
+        "color2": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_COLOR"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "color",
+            "$value": "#0000001a"
+        },
+        "offsetX1": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 0
+        },
+        "offsetY1": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 10
+        },
+        "radius1": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 15
+        },
+        "spread1": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": -3
+        },
+        "offsetX2": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 0
+        },
+        "offsetY2": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 4
+        },
+        "radius2": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 6
+        },
+        "spread2": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": -4
+        }
+    },
+    "lg": {
+        "color1": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_COLOR"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "color",
+            "$value": "#0000001a"
+        },
+        "color2": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_COLOR"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "color",
+            "$value": "#0000001a"
+        },
+        "offsetX1": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 0
+        },
+        "offsetY1": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 20
+        },
+        "radius1": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 25
+        },
+        "spread1": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": -5
+        },
+        "offsetX2": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 0
+        },
+        "offsetY2": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 8
+        },
+        "radius2": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 10
+        },
+        "spread2": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": -6
+        }
+    },
+    "xl": {
+        "color1": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_COLOR"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "color",
+            "$value": "#0000001a"
+        },
+        "color2": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_COLOR"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "color",
+            "$value": "#0000001a"
+        },
+        "offsetX1": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 0
+        },
+        "offsetY1": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 20
+        },
+        "radius1": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 25
+        },
+        "spread1": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": -5
+        },
+        "offsetX2": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 0
+        },
+        "offsetY2": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 8
+        },
+        "radius2": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 10
+        },
+        "spread2": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": -6
+        }
+    },
+    "2xl": {
+        "color": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_COLOR"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "color",
+            "$value": "#00000040"
+        },
+        "offsetX": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 0
+        },
+        "offsetY": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 25
+        },
+        "radius": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 50
+        },
+        "spread": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": -12
+        }
+    },
+    "inner": {
+        "color": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_COLOR"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "color",
+            "$value": "#0000000d"
+        },
+        "offsetX": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 0
+        },
+        "offsetY": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 2
+        },
+        "radius": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 4
+        },
+        "spread": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 0
+        }
+    }
+}

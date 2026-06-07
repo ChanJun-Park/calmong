@@ -118,6 +118,9 @@ Surface의 radius는 elevation과 크기가 커질수록 증가하지만, elevat
 무조건 큰 radius를 사용하지 않는다. 화면 내 시각적 위계와 컨테이너 크기를 함께
 고려한다.
 
+Surface의 깊이 역할과 Light/Dark shadow 규칙은
+[`ELEVATION_SYSTEM.md`](ELEVATION_SYSTEM.md)를 함께 따른다.
+
 ```kotlin
 ModalBottomSheet(
     onDismissRequest = onDismiss,
