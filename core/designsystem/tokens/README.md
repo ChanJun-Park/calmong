@@ -24,6 +24,10 @@ Layout breakpoint(Android dp WindowWidthClass)와 `contentMaxWidth` 역할 사�
 [`../LAYOUT_SYSTEM.md`](../LAYOUT_SYSTEM.md)를 참고한다.
 Figma alias 원본은 [`semantic.layout.json`](semantic.layout.json)이다.
 
+Stroke(외곽선 너비) `strokeWidth` 역할 사용 규칙은
+[`../STROKE_SYSTEM.md`](../STROKE_SYSTEM.md)를 참고한다(외곽선 *색*은 색상 시스템이 담당).
+Figma alias 원본은 [`semantic.stroke.json`](semantic.stroke.json)이다.
+
 ```
 primitive (raw 팔레트)        →  semantic (의미 부여)         →  component
 Tailwind indigo/600 …            primary.background.default       Button 배경

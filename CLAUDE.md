@@ -80,12 +80,13 @@ Now in Android 구조를 참고한다. **처음부터 다 만들지 말고 실�
 Tailwind primitive(raw 팔레트/스케일)는 `internal`이라 직접 못 쓰며, 항상 의미(역할) 토큰을 거친다.
 
 - **진입점**: 화면을 `CalMongTheme { }`로 감싸고, 토큰은 다음 accessor로 접근한다.
-  - `CalMongTheme.colors` · `.shapes` · `.elevations` · `.spacings` · `.layout` · `.windowWidthClass`
-- **5개 토큰 시스템** — 역할·매핑·사용 규칙은 각 가이드가 단일 출처:
+  - `CalMongTheme.colors` · `.shapes` · `.elevations` · `.spacings` · `.strokeWidths` · `.layout` · `.windowWidthClass`
+- **6개 토큰 시스템** — 역할·매핑·사용 규칙은 각 가이드가 단일 출처:
   - 색상: `core/designsystem/COLOR_SYSTEM.md`
   - radius/shape: `core/designsystem/RADIUS_SYSTEM.md`
   - elevation: `core/designsystem/ELEVATION_SYSTEM.md`
   - spacing: `core/designsystem/SPACING_SYSTEM.md`
+  - stroke(외곽선 너비): `core/designsystem/STROKE_SYSTEM.md`
   - layout(WindowWidthClass·contentMaxWidth): `core/designsystem/LAYOUT_SYSTEM.md`
   - 토큰 구조·Figma 동기화 절차: `core/designsystem/tokens/README.md`
 
@@ -93,6 +94,7 @@ Tailwind primitive(raw 팔레트/스케일)는 `internal`이라 직접 못 쓰�
 - **색**: `Color(0x…)`나 Material 색 직접 대신 `CalMongTheme.colors.*`. 채움 위 콘텐츠는 `brand.foreground.default`, 상태 표현은 `functional.stateLayer`(soft/solid)와 `stroke`의 상태색을 쓴다.
 - **치수**: `RoundedCornerShape(…dp)`·`padding(…dp)` 직접 대신 `CalMongTheme.shapes.*` / `CalMongTheme.spacings.*`(gap·inset·section 역할).
 - **깊이**: 그림자 수치 대신 `CalMongTheme.elevations.*`(flat~modal). Light는 그림자, Dark는 surface 색으로 깊이 표현.
+- **외곽선**: `border(1.dp, …)`처럼 두께 직접 대신 `CalMongTheme.strokeWidths.*`(none/default/emphasis/focus). 외곽선 *색*은 `colors.*.stroke`, *너비*는 `strokeWidths`로 — 두 축을 조합한다.
 - **반응형**: 임의 dp 비교 금지. `CalMongTheme.windowWidthClass`(Compact/Medium/Expanded/Large)로 골격을 분기하고, 넓은 화면 콘텐츠 폭은 `layout.contentMaxWidth`(form/prose/wide)로 제한한다.
 - **Material3 컴포넌트**(Button/Card 등)는 `CalMongTheme`이 `MaterialTheme.colorScheme`/`shapes`로 매핑해 자동으로 브랜드를 따른다. 고유 토큰이 필요할 때만 `CalMongTheme.*`를 직접 쓴다.
 

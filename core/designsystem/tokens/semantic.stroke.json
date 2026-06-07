@@ -1,0 +1,20 @@
+{
+  "strokeWidth": {
+    "none": {
+      "$type": "number",
+      "$value": "{borderWidth.0}"
+    },
+    "default": {
+      "$type": "number",
+      "$value": "{borderWidth.DEFAULT}"
+    },
+    "emphasis": {
+      "$type": "number",
+      "$value": "{borderWidth.2}"
+    },
+    "focus": {
+      "$type": "number",
+      "$value": "{borderWidth.4}"
+    }
+  }
+}

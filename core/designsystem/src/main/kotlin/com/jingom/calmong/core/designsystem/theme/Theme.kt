@@ -28,6 +28,9 @@ import com.jingom.calmong.core.designsystem.theme.shape.calMongMaterialShapes
 import com.jingom.calmong.core.designsystem.theme.spacing.CalMongSpacings
 import com.jingom.calmong.core.designsystem.theme.spacing.DefaultCalMongSpacings
 import com.jingom.calmong.core.designsystem.theme.spacing.LocalCalMongSpacings
+import com.jingom.calmong.core.designsystem.theme.stroke.CalMongStrokeWidths
+import com.jingom.calmong.core.designsystem.theme.stroke.DefaultCalMongStrokeWidths
+import com.jingom.calmong.core.designsystem.theme.stroke.LocalCalMongStrokeWidths
 
 @Composable
 fun CalMongTheme(
@@ -57,6 +60,7 @@ fun CalMongTheme(
         LocalCalMongShapes provides DefaultCalMongShapes,
         LocalCalMongElevations provides elevations,
         LocalCalMongSpacings provides DefaultCalMongSpacings,
+        LocalCalMongStrokeWidths provides DefaultCalMongStrokeWidths,
         LocalCalMongLayout provides DefaultCalMongLayout,
         LocalWindowWidthClass provides windowWidthClass,
     ) {
@@ -75,6 +79,7 @@ fun CalMongTheme(
  * `CalMongTheme.shapes.surface.card`,
  * `CalMongTheme.elevations.raised1`,
  * `CalMongTheme.spacings.inset.default`,
+ * `CalMongTheme.strokeWidths.emphasis`,
  * `CalMongTheme.layout.contentMaxWidth.form`,
  * `CalMongTheme.windowWidthClass`처럼 접근한다.
  * Material3 컴포넌트는 [CalMongTheme]이 매핑해준 `MaterialTheme.colorScheme`을 그대로 쓰고,
@@ -100,6 +105,11 @@ object CalMongTheme {
         @Composable
         @ReadOnlyComposable
         get() = LocalCalMongSpacings.current
+
+    val strokeWidths: CalMongStrokeWidths
+        @Composable
+        @ReadOnlyComposable
+        get() = LocalCalMongStrokeWidths.current
 
     val layout: CalMongLayout
         @Composable
