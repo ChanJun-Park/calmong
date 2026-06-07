@@ -1,0 +1,288 @@
+{
+    "opacity": {
+        "0": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "OPACITY"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 0
+        },
+        "5": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "OPACITY"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 5
+        },
+        "10": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "OPACITY"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 10
+        },
+        "20": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "OPACITY"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 20
+        },
+        "25": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "OPACITY"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 25
+        },
+        "30": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "OPACITY"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 30
+        },
+        "40": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "OPACITY"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 40
+        },
+        "50": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "OPACITY"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 50
+        },
+        "60": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "OPACITY"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 60
+        },
+        "70": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "OPACITY"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 70
+        },
+        "75": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "OPACITY"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 75
+        },
+        "80": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "OPACITY"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 80
+        },
+        "90": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "OPACITY"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 90
+        },
+        "95": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "OPACITY"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 95
+        },
+        "100": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "OPACITY"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 100
+        }
+    },
+    "blur": {
+        "none": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 0
+        },
+        "sm": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 4
+        },
+        "DEFAULT": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 8
+        },
+        "md": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 12
+        },
+        "lg": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 16
+        },
+        "xl": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 24
+        },
+        "2xl": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 40
+        },
+        "3xl": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "EFFECT_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 64
+        }
+    },
+    "borderWidth": {
+        "0": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "STROKE_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 0
+        },
+        "2": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "STROKE_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 2
+        },
+        "4": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "STROKE_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 4
+        },
+        "8": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "STROKE_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 8
+        },
+        "DEFAULT": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "STROKE_FLOAT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 1
+        }
+    }
+}

@@ -16,6 +16,11 @@ import com.jingom.calmong.core.designsystem.theme.elevation.CalMongElevations
 import com.jingom.calmong.core.designsystem.theme.elevation.LocalCalMongElevations
 import com.jingom.calmong.core.designsystem.theme.elevation.darkCalMongElevations
 import com.jingom.calmong.core.designsystem.theme.elevation.lightCalMongElevations
+import com.jingom.calmong.core.designsystem.theme.layout.CalMongLayout
+import com.jingom.calmong.core.designsystem.theme.layout.DefaultCalMongLayout
+import com.jingom.calmong.core.designsystem.theme.layout.LocalCalMongLayout
+import com.jingom.calmong.core.designsystem.theme.layout.LocalWindowWidthClass
+import com.jingom.calmong.core.designsystem.theme.layout.WindowWidthClass
 import com.jingom.calmong.core.designsystem.theme.shape.CalMongShapes
 import com.jingom.calmong.core.designsystem.theme.shape.DefaultCalMongShapes
 import com.jingom.calmong.core.designsystem.theme.shape.LocalCalMongShapes
@@ -27,6 +32,7 @@ import com.jingom.calmong.core.designsystem.theme.spacing.LocalCalMongSpacings
 @Composable
 fun CalMongTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
+    windowWidthClass: WindowWidthClass = WindowWidthClass.Compact,
     content: @Composable () -> Unit,
 ) {
     val colorScheme =
@@ -51,6 +57,8 @@ fun CalMongTheme(
         LocalCalMongShapes provides DefaultCalMongShapes,
         LocalCalMongElevations provides elevations,
         LocalCalMongSpacings provides DefaultCalMongSpacings,
+        LocalCalMongLayout provides DefaultCalMongLayout,
+        LocalWindowWidthClass provides windowWidthClass,
     ) {
         MaterialTheme(
             colorScheme = materialColorScheme,
@@ -66,7 +74,9 @@ fun CalMongTheme(
  * `CalMongTheme.colors.primary.background.default`,
  * `CalMongTheme.shapes.surface.card`,
  * `CalMongTheme.elevations.raised1`,
- * `CalMongTheme.spacings.inset.default`처럼 접근한다.
+ * `CalMongTheme.spacings.inset.default`,
+ * `CalMongTheme.layout.contentMaxWidth.form`,
+ * `CalMongTheme.windowWidthClass`처럼 접근한다.
  * Material3 컴포넌트는 [CalMongTheme]이 매핑해준 `MaterialTheme.colorScheme`을 그대로 쓰고,
  * CalMong 고유 토큰이 필요하면 이 accessor를 쓴다.
  */
@@ -90,6 +100,17 @@ object CalMongTheme {
         @Composable
         @ReadOnlyComposable
         get() = LocalCalMongSpacings.current
+
+    val layout: CalMongLayout
+        @Composable
+        @ReadOnlyComposable
+        get() = LocalCalMongLayout.current
+
+    /** 현재 창 너비 클래스. 화면 골격 분기에 사용. */
+    val windowWidthClass: WindowWidthClass
+        @Composable
+        @ReadOnlyComposable
+        get() = LocalWindowWidthClass.current
 }
 
 /**

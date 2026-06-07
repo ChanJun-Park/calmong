@@ -1,0 +1,146 @@
+{
+    "breakpoint": {
+        "medium": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "WIDTH_HEIGHT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 600
+        },
+        "expanded": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "WIDTH_HEIGHT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 840
+        },
+        "large": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "WIDTH_HEIGHT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 1200
+        }
+    },
+    "container": {
+        "xs": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "WIDTH_HEIGHT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 320
+        },
+        "sm": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "WIDTH_HEIGHT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 384
+        },
+        "md": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "WIDTH_HEIGHT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 448
+        },
+        "lg": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "WIDTH_HEIGHT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 512
+        },
+        "xl": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "WIDTH_HEIGHT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 576
+        },
+        "2xl": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "WIDTH_HEIGHT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 672
+        },
+        "3xl": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "WIDTH_HEIGHT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 768
+        },
+        "4xl": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "WIDTH_HEIGHT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 896
+        },
+        "5xl": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "WIDTH_HEIGHT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 1024
+        },
+        "6xl": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "WIDTH_HEIGHT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 1152
+        },
+        "7xl": {
+            "$extensions": {
+                "com.figma.scopes": [
+                    "WIDTH_HEIGHT"
+                ],
+                "com.figma.hiddenFromPublishing": false
+            },
+            "$type": "number",
+            "$value": 1280
+        }
+    }
+}

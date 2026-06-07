@@ -20,6 +20,10 @@ Spacing primitive와 `gap`, `inset`, `section` 역할 사용 규칙은
 [`../SPACING_SYSTEM.md`](../SPACING_SYSTEM.md)를 참고한다.
 Figma alias 원본은 [`semantic.spacing.json`](semantic.spacing.json)이다.
 
+Layout breakpoint(Android dp WindowWidthClass)와 `contentMaxWidth` 역할 사용 규칙은
+[`../LAYOUT_SYSTEM.md`](../LAYOUT_SYSTEM.md)를 참고한다.
+Figma alias 원본은 [`semantic.layout.json`](semantic.layout.json)이다.
+
 ```
 primitive (raw 팔레트)        →  semantic (의미 부여)         →  component
 Tailwind indigo/600 …            primary.background.default       Button 배경

@@ -1,0 +1,30 @@
+{
+  "breakpoint": {
+    "medium": {
+      "$type": "number",
+      "$value": "{breakpoint.medium}"
+    },
+    "expanded": {
+      "$type": "number",
+      "$value": "{breakpoint.expanded}"
+    },
+    "large": {
+      "$type": "number",
+      "$value": "{breakpoint.large}"
+    }
+  },
+  "contentMaxWidth": {
+    "form": {
+      "$type": "number",
+      "$value": "{container.md}"
+    },
+    "prose": {
+      "$type": "number",
+      "$value": "{container.2xl}"
+    },
+    "wide": {
+      "$type": "number",
+      "$value": "{container.3xl}"
+    }
+  }
+}
