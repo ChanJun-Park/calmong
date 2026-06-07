@@ -75,6 +75,35 @@ Now in Android 구조를 참고한다. **처음부터 다 만들지 말고 실�
 - **원칙**: SOLID / KISS / DRY / YAGNI. 단, **추측성 추상화 금지** — 중복이 실제로 아플 때 추상화한다.
 - **정적 분석 / 포맷**: Spotless Gradle plugin으로 ktlint를 적용 + Detekt. 둘 다 convention plugin으로 묶어 모든 모듈에 일관 적용하고, CI에서 검증.
 
+## 디자인 시스템 (`:core:designsystem`)
+모든 UI는 `:core:designsystem`의 **semantic 토큰만** 사용한다. 색·치수를 화면에 직접 박지 않는다.
+Tailwind primitive(raw 팔레트/스케일)는 `internal`이라 직접 못 쓰며, 항상 의미(역할) 토큰을 거친다.
+
+- **진입점**: 화면을 `CalMongTheme { }`로 감싸고, 토큰은 다음 accessor로 접근한다.
+  - `CalMongTheme.colors` · `.shapes` · `.elevations` · `.spacings` · `.layout` · `.windowWidthClass`
+- **5개 토큰 시스템** — 역할·매핑·사용 규칙은 각 가이드가 단일 출처:
+  - 색상: `core/designsystem/COLOR_SYSTEM.md`
+  - radius/shape: `core/designsystem/RADIUS_SYSTEM.md`
+  - elevation: `core/designsystem/ELEVATION_SYSTEM.md`
+  - spacing: `core/designsystem/SPACING_SYSTEM.md`
+  - layout(WindowWidthClass·contentMaxWidth): `core/designsystem/LAYOUT_SYSTEM.md`
+  - 토큰 구조·Figma 동기화 절차: `core/designsystem/tokens/README.md`
+
+### 사용 규칙
+- **색**: `Color(0x…)`나 Material 색 직접 대신 `CalMongTheme.colors.*`. 채움 위 콘텐츠는 `brand.foreground.default`, 상태 표현은 `functional.stateLayer`(soft/solid)와 `stroke`의 상태색을 쓴다.
+- **치수**: `RoundedCornerShape(…dp)`·`padding(…dp)` 직접 대신 `CalMongTheme.shapes.*` / `CalMongTheme.spacings.*`(gap·inset·section 역할).
+- **깊이**: 그림자 수치 대신 `CalMongTheme.elevations.*`(flat~modal). Light는 그림자, Dark는 surface 색으로 깊이 표현.
+- **반응형**: 임의 dp 비교 금지. `CalMongTheme.windowWidthClass`(Compact/Medium/Expanded/Large)로 골격을 분기하고, 넓은 화면 콘텐츠 폭은 `layout.contentMaxWidth`(form/prose/wide)로 제한한다.
+- **Material3 컴포넌트**(Button/Card 등)는 `CalMongTheme`이 `MaterialTheme.colorScheme`/`shapes`로 매핑해 자동으로 브랜드를 따른다. 고유 토큰이 필요할 때만 `CalMongTheme.*`를 직접 쓴다.
+
+### 토큰 추가가 필요할 때
+spacing·shape·layout(및 color·elevation)에 **역할이 부족하면 새 요소를 정의해도 된다**. 단 추측성 추가는 금지하고(실제로 필요할 때만), 다음을 함께 갱신해 단일 출처를 유지한다.
+1. (필요 시) primitive 스케일 — `theme/<domain>/CalMong*.kt`
+2. semantic 역할 — 해당 data class에 역할 추가
+3. Figma 변수 + `core/designsystem/tokens/semantic.<domain>.json`
+4. 해당 `*_SYSTEM.md` 가이드
+값의 진실은 코드(`theme/<domain>/…`)와 토큰 JSON이며, 한쪽을 바꾸면 다른 쪽도 맞춘다.
+
 ## 작업 규칙
 
 ### 커밋
