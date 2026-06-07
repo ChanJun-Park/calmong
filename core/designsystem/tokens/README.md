@@ -94,3 +94,8 @@ primitive 변수의 경로명이 `indigo/600`(슬래시)인지 확인. alias `{i
 semantic 값은 **코드와 Figma 두 곳**에 있다. 한쪽을 바꾸면 다른 쪽도 맞춘다.
 - 코드: `theme/color/CalMongColorSchemes.kt`
 - Figma JSON: `tokens/semantic.color.{light,dark}.json`
+
+## Figma 문서 페이지
+
+색상 시스템을 Figma에 문서화하는 빌드 가이드(변수 세팅 + 팔레트 + 예시 컴포넌트)는
+[`figma-doc-page.md`](figma-doc-page.md) 참고.
