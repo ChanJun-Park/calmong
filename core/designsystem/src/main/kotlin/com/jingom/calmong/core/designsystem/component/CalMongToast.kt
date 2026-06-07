@@ -14,7 +14,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.unit.dp
 import com.jingom.calmong.core.designsystem.theme.CalMongTheme
 import com.jingom.calmong.core.designsystem.theme.color.FunctionalVariant
 import com.jingom.calmong.core.designsystem.theme.elevation.elevationShadow
@@ -46,7 +45,7 @@ fun CalMongToast(
             modifier
                 .elevationShadow(CalMongTheme.elevations.overlay, shape)
                 .background(palette.container, shape)
-                .border(TOAST_BORDER_WIDTH, palette.border, shape)
+                .border(CalMongTheme.strokeWidths.emphasis, palette.border, shape)
                 .padding(horizontal = spacings.inset.default, vertical = spacings.inset.compact),
         horizontalArrangement = Arrangement.spacedBy(spacings.gap.compact),
         verticalAlignment = Alignment.CenterVertically,
@@ -84,9 +83,6 @@ private val CalMongToastStyle.icon: ImageVector
             CalMongToastStyle.Error -> CalMongToastErrorIcon
             CalMongToastStyle.Warning -> CalMongToastWarningIcon
         }
-
-/** 헤어라인 토스트 외곽선 두께. spacing은 거리 토큰이라 stroke 폭 역할이 없어 1dp 헤어라인을 직접 둔다. */
-private val TOAST_BORDER_WIDTH = 1.dp
 
 /** 토스트 한 벌에 쓰이는 색 묶음. subtle 배경 + default 아이콘/외곽선 + 본문 텍스트(대비 확보). */
 private data class ToastPalette(
