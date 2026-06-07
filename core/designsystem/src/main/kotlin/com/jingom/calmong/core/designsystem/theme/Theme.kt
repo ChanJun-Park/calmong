@@ -79,7 +79,7 @@ private fun CalMongColorScheme.toMaterialColorScheme(darkTheme: Boolean) =
         onError = functional.common.negative.onColor,
         errorContainer = functional.common.negative.subtle,
         onErrorContainer = functional.common.negative.default,
-        outline = neutral.stroke.default,
-        outlineVariant = neutral.stroke.subtle,
+        outline = neutral.stroke.default.default,
+        outlineVariant = neutral.stroke.subtle.default,
         scrim = functional.general.overlay,
     )

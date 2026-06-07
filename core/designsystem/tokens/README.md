@@ -21,11 +21,13 @@ Tailwind indigo/600 …            primary.background.default       Button 배�
 - **3단계**: 각 2단계의 variant
   - `background`: base, default, raised1, raised2, dimmed, inverted *(brand는 default/subtle/bold/dimmed)*
   - `foreground`: static, default, subtle, decorative, alpha, inverted *(brand는 default/subtle/onColor)*
-  - `stroke`: divider, subtle, default, static *(brand는 default/subtle)*
+  - `stroke`: divider, subtle, default, static *(brand는 default/subtle)* — **각 변형이 상태별 색을 가짐(아래 4단계)**
   - `functional.common.*`: default, decorative, subtle, onColor
   - `functional.general`: overlay, highlight, shadow, disabled
   - `functional.specific`: like, link
-- **4단계(선택)**: 상호작용 상태 — `brand.interaction`: default, hover, focused, pressed, activated, disabled
+- **4단계**: 상호작용 상태(`InteractionStates`) — default, hover, focused, pressed, activated, disabled
+  - `functional.stateLayer`: 컴포넌트 위에 덧대는 **반투명 오버레이**. 배경/채움의 상태는 이 레이어를 z축으로 올려 표현한다(배경색 자체는 안 바꿈).
+  - `*.stroke.{divider|subtle|default|static}` · `brand.stroke.{default|subtle}`: 외곽선은 색이 직접 바뀌므로 각 stroke 변형이 상태별 **불투명** 색을 보유한다.
 
 ### brand 매핑
 - `primary` = Indigo, `secondary` = Amber
@@ -49,6 +51,20 @@ CalMongTheme {                                   // light/dark 자동 (system �
 ```
 
 Material3 컴포넌트(Button/Card 등)는 `CalMongTheme`이 `MaterialTheme.colorScheme`로 매핑해 두므로 자동으로 브랜드 색을 따른다. calmong 고유 토큰이 필요할 때만 `CalMongTheme.colors`를 직접 쓴다.
+
+상태 처리 예:
+
+```kotlin
+val colors = CalMongTheme.colors
+
+// 배경/채움: 컴포넌트 위에 stateLayer를 덧댐
+Box(Modifier.background(colors.primary.background.default)) {
+    if (pressed) Box(Modifier.matchParentSize().background(colors.functional.stateLayer.pressed))
+}
+
+// 외곽선: stroke 색 자체를 상태에 맞게 선택
+val borderColor = if (focused) colors.neutral.stroke.default.focused else colors.neutral.stroke.default.default
+```
 
 ## Figma에 semantic 토큰 반영하기
 

@@ -86,9 +86,28 @@ private fun ColorTokenBoard() {
                     c.functional.general.disabled,
                 ),
             )
+            StateRow("stroke.default", c.neutral.stroke.default)
+            StateRow("stateLayer", c.functional.stateLayer)
         }
     }
 }
+
+/** InteractionStates(6개 상태)를 default→disabled 순으로 나열. */
+@Composable
+private fun StateRow(
+    label: String,
+    states: InteractionStates,
+) = SwatchRow(
+    label,
+    listOf(
+        states.default,
+        states.hover,
+        states.focused,
+        states.pressed,
+        states.activated,
+        states.disabled,
+    ),
+)
 
 @Composable
 private fun SwatchRow(
@@ -106,7 +125,7 @@ private fun SwatchRow(
                     border =
                         BorderStroke(
                             width = 1.dp,
-                            color = CalMongTheme.colors.neutral.stroke.divider,
+                            color = CalMongTheme.colors.neutral.stroke.divider.default,
                         ),
                 ) {}
             }

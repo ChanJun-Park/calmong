@@ -36,8 +36,6 @@ data class BrandColors(
     val background: BrandBackground,
     val foreground: BrandForeground,
     val stroke: BrandStroke,
-    /** 4단계: 브랜드 fill(버튼 등)의 상호작용 상태. */
-    val interaction: InteractionStates,
 )
 
 @Immutable
@@ -64,10 +62,10 @@ data class BrandForeground(
 
 @Immutable
 data class BrandStroke(
-    /** 브랜드 외곽선 */
-    val default: Color,
-    /** 옅은 브랜드 외곽선 */
-    val subtle: Color,
+    /** 브랜드 외곽선 (상태별 색) */
+    val default: InteractionStates,
+    /** 옅은 브랜드 외곽선 (상태별 색) */
+    val subtle: InteractionStates,
 )
 
 // ---------------------------------------------------------------------------
@@ -119,14 +117,14 @@ data class NeutralForeground(
 
 @Immutable
 data class NeutralStroke(
-    /** 헤어라인 구분선(가장 약함) */
-    val divider: Color,
-    /** 옅은 선 */
-    val subtle: Color,
-    /** 기본 외곽선 */
-    val default: Color,
-    /** 강한 고정 외곽선 */
-    val static: Color,
+    /** 헤어라인 구분선(가장 약함, 상태별 색) */
+    val divider: InteractionStates,
+    /** 옅은 선 (상태별 색) */
+    val subtle: InteractionStates,
+    /** 기본 외곽선 (상태별 색) */
+    val default: InteractionStates,
+    /** 강한 고정 외곽선 (상태별 색) */
+    val static: InteractionStates,
 )
 
 // ---------------------------------------------------------------------------
@@ -138,6 +136,11 @@ data class FunctionalColors(
     val common: CommonFunctional,
     val general: GeneralFunctional,
     val specific: SpecificFunctional,
+    /**
+     * 컴포넌트 위(z축)에 덧대는 반투명 상태 레이어. 알파로 상호작용을 표현한다.
+     * 배경의 상태 처리는 이 레이어를 올려서 한다(배경색 자체를 바꾸지 않음).
+     */
+    val stateLayer: InteractionStates,
 )
 
 @Immutable
@@ -186,6 +189,11 @@ data class SpecificFunctional(
 // 상호작용 상태 (4단계)
 // ---------------------------------------------------------------------------
 
+/**
+ * 상호작용 상태별 색 묶음.
+ * - [FunctionalColors.stateLayer]: 컴포넌트 위에 덧대는 반투명 오버레이(알파 값)
+ * - stroke([BrandStroke]/[NeutralStroke]): 외곽선은 색 자체가 바뀌므로 불투명 색
+ */
 @Immutable
 data class InteractionStates(
     val default: Color,
