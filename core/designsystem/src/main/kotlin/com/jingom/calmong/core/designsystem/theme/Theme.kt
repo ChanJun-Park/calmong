@@ -22,9 +22,13 @@ fun CalMongTheme(
         remember(darkTheme) {
             if (darkTheme) darkCalMongColorScheme() else lightCalMongColorScheme()
         }
+    val materialColorScheme =
+        remember(colorScheme, darkTheme) {
+            colorScheme.toMaterialColorScheme(darkTheme)
+        }
     CompositionLocalProvider(LocalCalMongColorScheme provides colorScheme) {
         MaterialTheme(
-            colorScheme = colorScheme.toMaterialColorScheme(darkTheme),
+            colorScheme = materialColorScheme,
             content = content,
         )
     }
@@ -49,36 +53,46 @@ object CalMongTheme {
  * Material 컴포넌트(Button/Card/Surface 등)가 브랜드 색을 자동으로 따르도록 한다.
  *
  * Material 기본 scheme에서 출발해 우리가 의미를 부여한 role만 override한다(`copy`).
- * 손대지 않은 surfaceContainer* 등은 Material 기본값을 그대로 둔다.
+ * 콘텐츠(on*)는 채움 위 콘텐츠 규칙을 따른다: 브랜드 채움 위=brand.foreground.default,
+ * 컨테이너(옅은 틴트) 위=neutral.foreground.default, 에러 채움 위=static(흰색).
  */
 private fun CalMongColorScheme.toMaterialColorScheme(darkTheme: Boolean) =
     (if (darkTheme) darkColorScheme() else lightColorScheme()).copy(
         primary = primary.background.default,
-        onPrimary = primary.foreground.onColor,
+        onPrimary = primary.foreground.default,
         primaryContainer = primary.background.subtle,
-        onPrimaryContainer = primary.foreground.default,
+        onPrimaryContainer = neutral.foreground.default,
         inversePrimary = primary.background.bold,
         secondary = secondary.background.default,
-        onSecondary = secondary.foreground.onColor,
+        onSecondary = secondary.foreground.default,
         secondaryContainer = secondary.background.subtle,
-        onSecondaryContainer = secondary.foreground.default,
+        onSecondaryContainer = neutral.foreground.default,
+        // 브랜드가 2색이라 tertiary는 secondary 별칭(같은 색)
         tertiary = secondary.background.default,
-        onTertiary = secondary.foreground.onColor,
+        onTertiary = secondary.foreground.default,
         tertiaryContainer = secondary.background.subtle,
-        onTertiaryContainer = secondary.foreground.default,
+        onTertiaryContainer = neutral.foreground.default,
         background = neutral.background.base,
         onBackground = neutral.foreground.default,
         surface = neutral.background.default,
         onSurface = neutral.foreground.default,
         surfaceVariant = neutral.background.raised1,
         onSurfaceVariant = neutral.foreground.subtle,
-        surfaceTint = primary.background.default,
+        // 명시적 elevation을 쓰므로 Material tonal tint는 끈다(표면색과 동일)
+        surfaceTint = neutral.background.default,
+        surfaceContainerLowest = neutral.background.base,
+        surfaceContainerLow = neutral.background.default,
+        surfaceContainer = neutral.background.raised1,
+        surfaceContainerHigh = neutral.background.raised2,
+        surfaceContainerHighest = neutral.background.raised2,
+        surfaceBright = neutral.background.default,
+        surfaceDim = neutral.background.dimmed,
         inverseSurface = neutral.background.inverted,
         inverseOnSurface = neutral.foreground.inverted,
         error = functional.common.negative.default,
-        onError = functional.common.negative.onColor,
+        onError = neutral.foreground.static,
         errorContainer = functional.common.negative.subtle,
-        onErrorContainer = functional.common.negative.default,
+        onErrorContainer = neutral.foreground.default,
         outline = neutral.stroke.default.default,
         outlineVariant = neutral.stroke.subtle.default,
         scrim = functional.general.overlay,

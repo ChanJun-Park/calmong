@@ -48,16 +48,18 @@ data class BrandBackground(
     val bold: Color,
     /** 흐려진 채움 (눌림/비활성 톤) */
     val dimmed: Color,
+    /** 역상 브랜드 표면 (light는 어둡게, dark는 밝게) */
+    val inverted: Color,
 )
 
 @Immutable
 data class BrandForeground(
-    /** 브랜드 색 텍스트/아이콘 */
+    /** background.default(브랜드 채움) 위에 올라가는 콘텐츠 — 채움 위에서 접근성 충족 */
     val default: Color,
-    /** 덜 강조된 브랜드 텍스트/아이콘 */
+    /** 채움 위 보조(덜 강조된) 콘텐츠 */
     val subtle: Color,
-    /** 브랜드 채움 위에 올라가는 텍스트/아이콘 */
-    val onColor: Color,
+    /** background.inverted(역상 표면) 위에 올라가는 콘텐츠 */
+    val inverted: Color,
 )
 
 @Immutable
@@ -140,7 +142,18 @@ data class FunctionalColors(
      * 컴포넌트 위(z축)에 덧대는 반투명 상태 레이어. 알파로 상호작용을 표현한다.
      * 배경의 상태 처리는 이 레이어를 올려서 한다(배경색 자체를 바꾸지 않음).
      */
-    val stateLayer: InteractionStates,
+    val stateLayer: StateLayerColors,
+)
+
+/**
+ * 반투명 상태 레이어 색. 요소의 밝기에 따라 고른다(테마 모드와 무관 — 둘 다 모드 독립).
+ * - [soft]: 옅은 색 요소(흰/연한 표면, ghost 버튼) 위 → 어둡게(검정 알파)
+ * - [solid]: 짙은 색 요소(브랜드 채움, 이미지) 위 → 밝게(흰색 알파)
+ */
+@Immutable
+data class StateLayerColors(
+    val soft: InteractionStates,
+    val solid: InteractionStates,
 )
 
 @Immutable
@@ -157,10 +170,8 @@ data class FunctionalVariant(
     val default: Color,
     /** 장식용(아이콘/그래프 등) */
     val decorative: Color,
-    /** 옅은 배경 틴트 */
+    /** 옅은 배경 틴트 — 권장: subtle 배경 + default 텍스트로 접근성 확보 */
     val subtle: Color,
-    /** default 채움 위 텍스트/아이콘 */
-    val onColor: Color,
 )
 
 /** 상태와 무관하게 공통으로 쓰이는 기능색. */
@@ -191,7 +202,7 @@ data class SpecificFunctional(
 
 /**
  * 상호작용 상태별 색 묶음.
- * - [FunctionalColors.stateLayer]: 컴포넌트 위에 덧대는 반투명 오버레이(알파 값)
+ * - [StateLayerColors]: 컴포넌트 위에 덧대는 반투명 오버레이(알파 값)
  * - stroke([BrandStroke]/[NeutralStroke]): 외곽선은 색 자체가 바뀌므로 불투명 색
  */
 @Immutable

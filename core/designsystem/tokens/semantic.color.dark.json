@@ -3,7 +3,7 @@
     "background": {
       "default": {
         "$type": "color",
-        "$value": "{indigo.500}"
+        "$value": "{indigo.600}"
       },
       "subtle": {
         "$type": "color",
@@ -16,20 +16,24 @@
       "dimmed": {
         "$type": "color",
         "$value": "{indigo.900}"
+      },
+      "inverted": {
+        "$type": "color",
+        "$value": "{indigo.100}"
       }
     },
     "foreground": {
       "default": {
         "$type": "color",
-        "$value": "{indigo.400}"
+        "$value": "{white}"
       },
       "subtle": {
         "$type": "color",
-        "$value": "{indigo.500}"
+        "$value": "{indigo.200}"
       },
-      "onColor": {
+      "inverted": {
         "$type": "color",
-        "$value": "{white}"
+        "$value": "{indigo.900}"
       }
     },
     "stroke": {
@@ -104,18 +108,22 @@
       "dimmed": {
         "$type": "color",
         "$value": "{amber.900}"
+      },
+      "inverted": {
+        "$type": "color",
+        "$value": "{amber.100}"
       }
     },
     "foreground": {
       "default": {
         "$type": "color",
-        "$value": "{amber.400}"
+        "$value": "{gray.950}"
       },
       "subtle": {
         "$type": "color",
-        "$value": "{amber.500}"
+        "$value": "{gray.800}"
       },
-      "onColor": {
+      "inverted": {
         "$type": "color",
         "$value": "{gray.950}"
       }
@@ -284,23 +292,23 @@
       "default": {
         "default": {
           "$type": "color",
-          "$value": "{gray.600}"
+          "$value": "{gray.500}"
         },
         "hover": {
           "$type": "color",
-          "$value": "{gray.500}"
+          "$value": "{gray.400}"
         },
         "focused": {
           "$type": "color",
-          "$value": "{gray.400}"
+          "$value": "{gray.300}"
         },
         "pressed": {
           "$type": "color",
-          "$value": "{gray.400}"
+          "$value": "{gray.300}"
         },
         "activated": {
           "$type": "color",
-          "$value": "{gray.500}"
+          "$value": "{gray.400}"
         },
         "disabled": {
           "$type": "color",
@@ -310,23 +318,23 @@
       "static": {
         "default": {
           "$type": "color",
-          "$value": "{gray.500}"
+          "$value": "{gray.400}"
         },
         "hover": {
           "$type": "color",
-          "$value": "{gray.400}"
+          "$value": "{gray.300}"
         },
         "focused": {
           "$type": "color",
-          "$value": "{gray.300}"
+          "$value": "{gray.200}"
         },
         "pressed": {
           "$type": "color",
-          "$value": "{gray.300}"
+          "$value": "{gray.200}"
         },
         "activated": {
           "$type": "color",
-          "$value": "{gray.400}"
+          "$value": "{gray.300}"
         },
         "disabled": {
           "$type": "color",
@@ -349,10 +357,6 @@
         "subtle": {
           "$type": "color",
           "$value": "{green.950}"
-        },
-        "onColor": {
-          "$type": "color",
-          "$value": "{white}"
         }
       },
       "negative": {
@@ -367,10 +371,6 @@
         "subtle": {
           "$type": "color",
           "$value": "{red.950}"
-        },
-        "onColor": {
-          "$type": "color",
-          "$value": "{white}"
         }
       },
       "informative": {
@@ -385,10 +385,6 @@
         "subtle": {
           "$type": "color",
           "$value": "{blue.950}"
-        },
-        "onColor": {
-          "$type": "color",
-          "$value": "{white}"
         }
       },
       "attention": {
@@ -403,10 +399,6 @@
         "subtle": {
           "$type": "color",
           "$value": "{amber.950}"
-        },
-        "onColor": {
-          "$type": "color",
-          "$value": "{gray.950}"
         }
       }
     },
@@ -441,10 +433,6 @@
         "subtle": {
           "$type": "color",
           "$value": "{rose.950}"
-        },
-        "onColor": {
-          "$type": "color",
-          "$value": "{white}"
         }
       },
       "link": {
@@ -459,37 +447,61 @@
         "subtle": {
           "$type": "color",
           "$value": "{blue.950}"
-        },
-        "onColor": {
-          "$type": "color",
-          "$value": "{white}"
         }
       }
     },
     "stateLayer": {
-      "default": {
-        "$type": "color",
-        "$value": "#00000000"
+      "soft": {
+        "default": {
+          "$type": "color",
+          "$value": "#00000000"
+        },
+        "hover": {
+          "$type": "color",
+          "$value": "#00000014"
+        },
+        "focused": {
+          "$type": "color",
+          "$value": "#0000001A"
+        },
+        "pressed": {
+          "$type": "color",
+          "$value": "#0000001F"
+        },
+        "activated": {
+          "$type": "color",
+          "$value": "#00000029"
+        },
+        "disabled": {
+          "$type": "color",
+          "$value": "#00000061"
+        }
       },
-      "hover": {
-        "$type": "color",
-        "$value": "#FFFFFF14"
-      },
-      "focused": {
-        "$type": "color",
-        "$value": "#FFFFFF1A"
-      },
-      "pressed": {
-        "$type": "color",
-        "$value": "#FFFFFF1F"
-      },
-      "activated": {
-        "$type": "color",
-        "$value": "#FFFFFF29"
-      },
-      "disabled": {
-        "$type": "color",
-        "$value": "#FFFFFF61"
+      "solid": {
+        "default": {
+          "$type": "color",
+          "$value": "#FFFFFF00"
+        },
+        "hover": {
+          "$type": "color",
+          "$value": "#FFFFFF14"
+        },
+        "focused": {
+          "$type": "color",
+          "$value": "#FFFFFF1A"
+        },
+        "pressed": {
+          "$type": "color",
+          "$value": "#FFFFFF1F"
+        },
+        "activated": {
+          "$type": "color",
+          "$value": "#FFFFFF29"
+        },
+        "disabled": {
+          "$type": "color",
+          "$value": "#FFFFFF61"
+        }
       }
     }
   }

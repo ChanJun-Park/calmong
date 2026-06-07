@@ -19,15 +19,21 @@ Tailwind indigo/600 …            primary.background.default       Button 배�
   - brand(`primary`/`secondary`) · `neutral` → `background` / `foreground` / `stroke`
   - `functional` → `common` / `general` / `specific`
 - **3단계**: 각 2단계의 variant
-  - `background`: base, default, raised1, raised2, dimmed, inverted *(brand는 default/subtle/bold/dimmed)*
-  - `foreground`: static, default, subtle, decorative, alpha, inverted *(brand는 default/subtle/onColor)*
+  - `background`: base, default, raised1, raised2, dimmed, inverted *(brand는 default/subtle/bold/dimmed/inverted)*
+  - `foreground`: static, default, subtle, decorative, alpha, inverted *(brand는 default/subtle/inverted)*
   - `stroke`: divider, subtle, default, static *(brand는 default/subtle)* — **각 변형이 상태별 색을 가짐(아래 4단계)**
-  - `functional.common.*`: default, decorative, subtle, onColor
+  - `functional.common.*`: default, decorative, subtle
   - `functional.general`: overlay, highlight, shadow, disabled
   - `functional.specific`: like, link
 - **4단계**: 상호작용 상태(`InteractionStates`) — default, hover, focused, pressed, activated, disabled
-  - `functional.stateLayer`: 컴포넌트 위에 덧대는 **반투명 오버레이**. 배경/채움의 상태는 이 레이어를 z축으로 올려 표현한다(배경색 자체는 안 바꿈).
-  - `*.stroke.{divider|subtle|default|static}` · `brand.stroke.{default|subtle}`: 외곽선은 색이 직접 바뀌므로 각 stroke 변형이 상태별 **불투명** 색을 보유한다.
+  - `functional.stateLayer.{soft|solid}`: 컴포넌트 위에 덧대는 **반투명 오버레이**. 요소 밝기로 고른다(테마 모드 무관) — `soft`=옅은 요소 위(검정 알파), `solid`=짙은 요소 위(흰색 알파). 배경/채움 상태는 이 레이어를 z축으로 올려 표현(배경색 자체는 안 바꿈).
+  - `*.stroke.{divider|subtle|default|static}` · `brand.stroke.{default|subtle}`: 외곽선은 색이 직접 바뀌므로 각 stroke 변형이 상태별 **불투명** 색을 보유. `default`/`static`은 비텍스트 대비 3:1 충족, `divider`/`subtle`은 장식용 헤어라인.
+
+### 콘텐츠 색 규칙 (onColor 없음)
+- 브랜드 채움 위 콘텐츠 = `brand.foreground.default` (채움 위에서 접근성 충족하도록 매핑됨)
+- functional은 **`subtle` 배경 + `default` 텍스트** 패턴 권장 (솔리드 채움 위 텍스트는 지양 — 대비 한계)
+- 이미지/스크림/어두운 고정면 위 콘텐츠 = `neutral.foreground.static` (모드 독립 흰색)
+- `static`은 모드와 무관하게 동일(흰색). 테마 표면 위 본문은 `foreground.default`를 쓴다.
 
 ### brand 매핑
 - `primary` = Indigo, `secondary` = Amber
@@ -57,9 +63,10 @@ Material3 컴포넌트(Button/Card 등)는 `CalMongTheme`이 `MaterialTheme.colo
 ```kotlin
 val colors = CalMongTheme.colors
 
-// 배경/채움: 컴포넌트 위에 stateLayer를 덧댐
-Box(Modifier.background(colors.primary.background.default)) {
-    if (pressed) Box(Modifier.matchParentSize().background(colors.functional.stateLayer.pressed))
+// 배경/채움: 컴포넌트 위에 stateLayer를 덧댐 (짙은 채움이면 solid, 옅으면 soft)
+Box(Modifier.background(colors.primary.background.default)) {     // 짙은 Indigo 채움
+    Text("확인", color = colors.primary.foreground.default)        // 흰 콘텐츠
+    if (pressed) Box(Modifier.matchParentSize().background(colors.functional.stateLayer.solid.pressed))
 }
 
 // 외곽선: stroke 색 자체를 상태에 맞게 선택

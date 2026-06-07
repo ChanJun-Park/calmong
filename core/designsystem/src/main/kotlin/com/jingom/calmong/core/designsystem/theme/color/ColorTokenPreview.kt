@@ -87,7 +87,8 @@ private fun ColorTokenBoard() {
                 ),
             )
             StateRow("stroke.default", c.neutral.stroke.default)
-            StateRow("stateLayer", c.functional.stateLayer)
+            StateRow("stateLayer.soft", c.functional.stateLayer.soft)
+            StateRow("stateLayer.solid", c.functional.stateLayer.solid)
         }
     }
 }

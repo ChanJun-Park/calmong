@@ -9,9 +9,14 @@ package com.jingom.calmong.core.designsystem.theme.color
  * brand: primary=Indigo, secondary=Amber.
  * functional: positive=Green, negative=Red, informative/link=Blue, attention=Amber, like=Rose.
  *
+ * 콘텐츠 색 규칙 (onColor 폐기)
+ * - 브랜드 채움 위 콘텐츠: brand.foreground.default (채움 위에서 접근성 충족하도록 매핑)
+ * - functional은 "subtle 배경 + default 텍스트" 패턴 권장 (솔리드 채움 위 텍스트는 지양)
+ * - 이미지/스크림/어두운 고정면 위: neutral.foreground.static (모드 독립 흰색)
+ *
  * 상태(state) 처리
- * - 배경/채움: functional.stateLayer(반투명 오버레이)를 z축으로 올려서 표현 → background 토큰은 상태 미보유
- * - 외곽선: 색 자체가 바뀌므로 각 stroke 변형이 InteractionStates를 직접 보유
+ * - 배경/채움: functional.stateLayer(soft=옅은 요소용 검정, solid=짙은 요소용 흰색)를 z축으로 올림
+ * - 외곽선: 색 자체가 바뀌므로 각 stroke 변형이 InteractionStates 보유 (default/static은 3:1 충족)
  */
 
 @Suppress("LongMethod")
@@ -25,12 +30,13 @@ fun lightCalMongColorScheme(): CalMongColorScheme =
                         subtle = Indigo50,
                         bold = Indigo700,
                         dimmed = Indigo100,
+                        inverted = Indigo900,
                     ),
                 foreground =
                     BrandForeground(
-                        default = Indigo600,
-                        subtle = Indigo400,
-                        onColor = White,
+                        default = White,
+                        subtle = Indigo200,
+                        inverted = Indigo50,
                     ),
                 stroke =
                     BrandStroke(
@@ -62,22 +68,23 @@ fun lightCalMongColorScheme(): CalMongColorScheme =
                         subtle = Amber50,
                         bold = Amber600,
                         dimmed = Amber100,
+                        inverted = Amber900,
                     ),
                 foreground =
                     BrandForeground(
-                        default = Amber600,
-                        subtle = Amber500,
-                        onColor = Gray950,
+                        default = Gray950,
+                        subtle = Gray800,
+                        inverted = Amber50,
                     ),
                 stroke =
                     BrandStroke(
                         default =
                             InteractionStates(
-                                default = Amber500,
-                                hover = Amber600,
-                                focused = Amber700,
-                                pressed = Amber700,
-                                activated = Amber600,
+                                default = Amber600,
+                                hover = Amber700,
+                                focused = Amber800,
+                                pressed = Amber800,
+                                activated = Amber700,
                                 disabled = Gray200,
                             ),
                         subtle =
@@ -105,7 +112,7 @@ fun lightCalMongColorScheme(): CalMongColorScheme =
                     ),
                 foreground =
                     NeutralForeground(
-                        static = Gray950,
+                        static = White,
                         default = Gray900,
                         subtle = Gray500,
                         decorative = Gray300,
@@ -132,23 +139,24 @@ fun lightCalMongColorScheme(): CalMongColorScheme =
                                 activated = Gray300,
                                 disabled = Gray100,
                             ),
+                        // 컴포넌트 경계 → 3:1 충족 위해 Gray500부터
                         default =
                             InteractionStates(
-                                default = Gray300,
-                                hover = Gray400,
-                                focused = Gray500,
-                                pressed = Gray500,
-                                activated = Gray400,
+                                default = Gray500,
+                                hover = Gray600,
+                                focused = Gray700,
+                                pressed = Gray700,
+                                activated = Gray600,
                                 disabled = Gray200,
                             ),
                         static =
                             InteractionStates(
-                                default = Gray400,
-                                hover = Gray500,
-                                focused = Gray600,
-                                pressed = Gray600,
-                                activated = Gray500,
-                                disabled = Gray200,
+                                default = Gray600,
+                                hover = Gray700,
+                                focused = Gray800,
+                                pressed = Gray800,
+                                activated = Gray700,
+                                disabled = Gray300,
                             ),
                     ),
             ),
@@ -161,28 +169,24 @@ fun lightCalMongColorScheme(): CalMongColorScheme =
                                 default = Green600,
                                 decorative = Green500,
                                 subtle = Green50,
-                                onColor = White,
                             ),
                         negative =
                             FunctionalVariant(
                                 default = Red600,
                                 decorative = Red500,
                                 subtle = Red50,
-                                onColor = White,
                             ),
                         informative =
                             FunctionalVariant(
                                 default = Blue600,
                                 decorative = Blue500,
                                 subtle = Blue50,
-                                onColor = White,
                             ),
                         attention =
                             FunctionalVariant(
                                 default = Amber500,
                                 decorative = Amber400,
                                 subtle = Amber50,
-                                onColor = Gray950,
                             ),
                     ),
                 general =
@@ -199,25 +203,36 @@ fun lightCalMongColorScheme(): CalMongColorScheme =
                                 default = Rose500,
                                 decorative = Rose400,
                                 subtle = Rose50,
-                                onColor = White,
                             ),
                         link =
                             FunctionalVariant(
                                 default = Blue600,
                                 decorative = Blue500,
                                 subtle = Blue50,
-                                onColor = White,
                             ),
                     ),
-                // 흰 배경 위 → 검정 계열 오버레이를 옅게~진하게
                 stateLayer =
-                    InteractionStates(
-                        default = Transparent,
-                        hover = BlackAlpha08,
-                        focused = BlackAlpha10,
-                        pressed = BlackAlpha12,
-                        activated = BlackAlpha16,
-                        disabled = BlackAlpha38,
+                    StateLayerColors(
+                        // 옅은 요소 위 → 검정 알파 (모드 독립)
+                        soft =
+                            InteractionStates(
+                                default = Transparent,
+                                hover = BlackAlpha08,
+                                focused = BlackAlpha10,
+                                pressed = BlackAlpha12,
+                                activated = BlackAlpha16,
+                                disabled = BlackAlpha38,
+                            ),
+                        // 짙은 요소 위 → 흰색 알파 (모드 독립)
+                        solid =
+                            InteractionStates(
+                                default = Transparent,
+                                hover = WhiteAlpha08,
+                                focused = WhiteAlpha10,
+                                pressed = WhiteAlpha12,
+                                activated = WhiteAlpha16,
+                                disabled = WhiteAlpha38,
+                            ),
                     ),
             ),
     )
@@ -229,16 +244,18 @@ fun darkCalMongColorScheme(): CalMongColorScheme =
             BrandColors(
                 background =
                     BrandBackground(
-                        default = Indigo500,
+                        // default를 Indigo600로 둬 흰 콘텐츠가 AA(6.29) 통과
+                        default = Indigo600,
                         subtle = Indigo950,
                         bold = Indigo400,
                         dimmed = Indigo900,
+                        inverted = Indigo100,
                     ),
                 foreground =
                     BrandForeground(
-                        default = Indigo400,
-                        subtle = Indigo500,
-                        onColor = White,
+                        default = White,
+                        subtle = Indigo200,
+                        inverted = Indigo900,
                     ),
                 stroke =
                     BrandStroke(
@@ -270,12 +287,13 @@ fun darkCalMongColorScheme(): CalMongColorScheme =
                         subtle = Amber950,
                         bold = Amber300,
                         dimmed = Amber900,
+                        inverted = Amber100,
                     ),
                 foreground =
                     BrandForeground(
-                        default = Amber400,
-                        subtle = Amber500,
-                        onColor = Gray950,
+                        default = Gray950,
+                        subtle = Gray800,
+                        inverted = Gray950,
                     ),
                 stroke =
                     BrandStroke(
@@ -340,22 +358,23 @@ fun darkCalMongColorScheme(): CalMongColorScheme =
                                 activated = Gray600,
                                 disabled = Gray800,
                             ),
+                        // 컴포넌트 경계 → 3:1 충족 위해 Gray500부터
                         default =
-                            InteractionStates(
-                                default = Gray600,
-                                hover = Gray500,
-                                focused = Gray400,
-                                pressed = Gray400,
-                                activated = Gray500,
-                                disabled = Gray700,
-                            ),
-                        static =
                             InteractionStates(
                                 default = Gray500,
                                 hover = Gray400,
                                 focused = Gray300,
                                 pressed = Gray300,
                                 activated = Gray400,
+                                disabled = Gray700,
+                            ),
+                        static =
+                            InteractionStates(
+                                default = Gray400,
+                                hover = Gray300,
+                                focused = Gray200,
+                                pressed = Gray200,
+                                activated = Gray300,
                                 disabled = Gray700,
                             ),
                     ),
@@ -369,28 +388,24 @@ fun darkCalMongColorScheme(): CalMongColorScheme =
                                 default = Green500,
                                 decorative = Green400,
                                 subtle = Green950,
-                                onColor = White,
                             ),
                         negative =
                             FunctionalVariant(
                                 default = Red500,
                                 decorative = Red400,
                                 subtle = Red950,
-                                onColor = White,
                             ),
                         informative =
                             FunctionalVariant(
                                 default = Blue500,
                                 decorative = Blue400,
                                 subtle = Blue950,
-                                onColor = White,
                             ),
                         attention =
                             FunctionalVariant(
                                 default = Amber400,
                                 decorative = Amber300,
                                 subtle = Amber950,
-                                onColor = Gray950,
                             ),
                     ),
                 general =
@@ -407,25 +422,34 @@ fun darkCalMongColorScheme(): CalMongColorScheme =
                                 default = Rose400,
                                 decorative = Rose300,
                                 subtle = Rose950,
-                                onColor = White,
                             ),
                         link =
                             FunctionalVariant(
                                 default = Blue400,
                                 decorative = Blue300,
                                 subtle = Blue950,
-                                onColor = White,
                             ),
                     ),
-                // 어두운 배경 위 → 흰 계열 오버레이를 옅게~진하게
                 stateLayer =
-                    InteractionStates(
-                        default = Transparent,
-                        hover = WhiteAlpha08,
-                        focused = WhiteAlpha10,
-                        pressed = WhiteAlpha12,
-                        activated = WhiteAlpha16,
-                        disabled = WhiteAlpha38,
+                    StateLayerColors(
+                        soft =
+                            InteractionStates(
+                                default = Transparent,
+                                hover = BlackAlpha08,
+                                focused = BlackAlpha10,
+                                pressed = BlackAlpha12,
+                                activated = BlackAlpha16,
+                                disabled = BlackAlpha38,
+                            ),
+                        solid =
+                            InteractionStates(
+                                default = Transparent,
+                                hover = WhiteAlpha08,
+                                focused = WhiteAlpha10,
+                                pressed = WhiteAlpha12,
+                                activated = WhiteAlpha16,
+                                disabled = WhiteAlpha38,
+                            ),
                     ),
             ),
     )
