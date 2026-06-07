@@ -1,0 +1,60 @@
+{
+  "gap": {
+    "tight": {
+      "$type": "number",
+      "$value": "{1}"
+    },
+    "compact": {
+      "$type": "number",
+      "$value": "{2}"
+    },
+    "default": {
+      "$type": "number",
+      "$value": "{3}"
+    },
+    "relaxed": {
+      "$type": "number",
+      "$value": "{4}"
+    },
+    "loose": {
+      "$type": "number",
+      "$value": "{6}"
+    }
+  },
+  "inset": {
+    "compact": {
+      "$type": "number",
+      "$value": "{2}"
+    },
+    "default": {
+      "$type": "number",
+      "$value": "{4}"
+    },
+    "comfortable": {
+      "$type": "number",
+      "$value": "{5}"
+    },
+    "spacious": {
+      "$type": "number",
+      "$value": "{6}"
+    }
+  },
+  "section": {
+    "related": {
+      "$type": "number",
+      "$value": "{6}"
+    },
+    "default": {
+      "$type": "number",
+      "$value": "{8}"
+    },
+    "distinct": {
+      "$type": "number",
+      "$value": "{12}"
+    },
+    "page": {
+      "$type": "number",
+      "$value": "{16}"
+    }
+  }
+}

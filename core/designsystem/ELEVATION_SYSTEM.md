@@ -4,6 +4,9 @@ CalMong의 elevation은 shadow 수치가 아니라 **표면의 계층 역할**�
 Light에서는 shadow가 깊이를 주로 표현하고, Dark에서는 밝아지는 surface 색이 깊이를
 주로 표현한다.
 
+Surface 내부 여백과 요소 간격은
+[`SPACING_SYSTEM.md`](SPACING_SYSTEM.md)를 함께 따른다.
+
 Figma 문서:
 [Design System / Elevation System](https://www.figma.com/design/y1auG7nkgZKt00DtduF90Q/Design-System?node-id=47-2)
 

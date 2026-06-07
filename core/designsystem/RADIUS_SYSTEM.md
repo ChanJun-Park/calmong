@@ -120,6 +120,8 @@ Surface의 radius는 elevation과 크기가 커질수록 증가하지만, elevat
 
 Surface의 깊이 역할과 Light/Dark shadow 규칙은
 [`ELEVATION_SYSTEM.md`](ELEVATION_SYSTEM.md)를 함께 따른다.
+Surface 내부 여백과 요소 간격은
+[`SPACING_SYSTEM.md`](SPACING_SYSTEM.md)를 함께 따른다.
 
 ```kotlin
 ModalBottomSheet(

@@ -1,0 +1,410 @@
+{
+    "0": {
+        "$extensions": {
+            "com.figma.scopes": [
+                "GAP",
+                "PARAGRAPH_SPACING",
+                "PARAGRAPH_INDENT"
+            ],
+            "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": 0
+    },
+    "1": {
+        "$extensions": {
+            "com.figma.scopes": [
+                "GAP",
+                "PARAGRAPH_SPACING",
+                "PARAGRAPH_INDENT"
+            ],
+            "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": 4
+    },
+    "2": {
+        "$extensions": {
+            "com.figma.scopes": [
+                "GAP",
+                "PARAGRAPH_SPACING",
+                "PARAGRAPH_INDENT"
+            ],
+            "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": 8
+    },
+    "3": {
+        "$extensions": {
+            "com.figma.scopes": [
+                "GAP",
+                "PARAGRAPH_SPACING",
+                "PARAGRAPH_INDENT"
+            ],
+            "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": 12
+    },
+    "4": {
+        "$extensions": {
+            "com.figma.scopes": [
+                "GAP",
+                "PARAGRAPH_SPACING",
+                "PARAGRAPH_INDENT"
+            ],
+            "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": 16
+    },
+    "5": {
+        "$extensions": {
+            "com.figma.scopes": [
+                "GAP",
+                "PARAGRAPH_SPACING",
+                "PARAGRAPH_INDENT"
+            ],
+            "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": 20
+    },
+    "6": {
+        "$extensions": {
+            "com.figma.scopes": [
+                "GAP",
+                "PARAGRAPH_SPACING",
+                "PARAGRAPH_INDENT"
+            ],
+            "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": 24
+    },
+    "7": {
+        "$extensions": {
+            "com.figma.scopes": [
+                "GAP",
+                "PARAGRAPH_SPACING",
+                "PARAGRAPH_INDENT"
+            ],
+            "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": 28
+    },
+    "8": {
+        "$extensions": {
+            "com.figma.scopes": [
+                "GAP",
+                "PARAGRAPH_SPACING",
+                "PARAGRAPH_INDENT"
+            ],
+            "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": 32
+    },
+    "9": {
+        "$extensions": {
+            "com.figma.scopes": [
+                "GAP",
+                "PARAGRAPH_SPACING",
+                "PARAGRAPH_INDENT"
+            ],
+            "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": 36
+    },
+    "10": {
+        "$extensions": {
+            "com.figma.scopes": [
+                "GAP",
+                "PARAGRAPH_SPACING",
+                "PARAGRAPH_INDENT"
+            ],
+            "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": 40
+    },
+    "11": {
+        "$extensions": {
+            "com.figma.scopes": [
+                "GAP",
+                "PARAGRAPH_SPACING",
+                "PARAGRAPH_INDENT"
+            ],
+            "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": 44
+    },
+    "12": {
+        "$extensions": {
+            "com.figma.scopes": [
+                "GAP",
+                "PARAGRAPH_SPACING",
+                "PARAGRAPH_INDENT"
+            ],
+            "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": 48
+    },
+    "14": {
+        "$extensions": {
+            "com.figma.scopes": [
+                "GAP",
+                "PARAGRAPH_SPACING",
+                "PARAGRAPH_INDENT"
+            ],
+            "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": 56
+    },
+    "16": {
+        "$extensions": {
+            "com.figma.scopes": [
+                "GAP",
+                "PARAGRAPH_SPACING",
+                "PARAGRAPH_INDENT"
+            ],
+            "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": 64
+    },
+    "20": {
+        "$extensions": {
+            "com.figma.scopes": [
+                "GAP",
+                "PARAGRAPH_SPACING",
+                "PARAGRAPH_INDENT"
+            ],
+            "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": 80
+    },
+    "24": {
+        "$extensions": {
+            "com.figma.scopes": [
+                "GAP",
+                "PARAGRAPH_SPACING",
+                "PARAGRAPH_INDENT"
+            ],
+            "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": 96
+    },
+    "28": {
+        "$extensions": {
+            "com.figma.scopes": [
+                "GAP",
+                "PARAGRAPH_SPACING",
+                "PARAGRAPH_INDENT"
+            ],
+            "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": 112
+    },
+    "32": {
+        "$extensions": {
+            "com.figma.scopes": [
+                "GAP",
+                "PARAGRAPH_SPACING",
+                "PARAGRAPH_INDENT"
+            ],
+            "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": 128
+    },
+    "36": {
+        "$extensions": {
+            "com.figma.scopes": [
+                "GAP",
+                "PARAGRAPH_SPACING",
+                "PARAGRAPH_INDENT"
+            ],
+            "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": 144
+    },
+    "40": {
+        "$extensions": {
+            "com.figma.scopes": [
+                "GAP",
+                "PARAGRAPH_SPACING",
+                "PARAGRAPH_INDENT"
+            ],
+            "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": 160
+    },
+    "44": {
+        "$extensions": {
+            "com.figma.scopes": [
+                "GAP",
+                "PARAGRAPH_SPACING",
+                "PARAGRAPH_INDENT"
+            ],
+            "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": 176
+    },
+    "48": {
+        "$extensions": {
+            "com.figma.scopes": [
+                "GAP",
+                "PARAGRAPH_SPACING",
+                "PARAGRAPH_INDENT"
+            ],
+            "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": 192
+    },
+    "52": {
+        "$extensions": {
+            "com.figma.scopes": [
+                "GAP",
+                "PARAGRAPH_SPACING",
+                "PARAGRAPH_INDENT"
+            ],
+            "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": 208
+    },
+    "56": {
+        "$extensions": {
+            "com.figma.scopes": [
+                "GAP",
+                "PARAGRAPH_SPACING",
+                "PARAGRAPH_INDENT"
+            ],
+            "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": 224
+    },
+    "60": {
+        "$extensions": {
+            "com.figma.scopes": [
+                "GAP",
+                "PARAGRAPH_SPACING",
+                "PARAGRAPH_INDENT"
+            ],
+            "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": 240
+    },
+    "64": {
+        "$extensions": {
+            "com.figma.scopes": [
+                "GAP",
+                "PARAGRAPH_SPACING",
+                "PARAGRAPH_INDENT"
+            ],
+            "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": 256
+    },
+    "72": {
+        "$extensions": {
+            "com.figma.scopes": [
+                "GAP",
+                "PARAGRAPH_SPACING",
+                "PARAGRAPH_INDENT"
+            ],
+            "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": 288
+    },
+    "80": {
+        "$extensions": {
+            "com.figma.scopes": [
+                "GAP",
+                "PARAGRAPH_SPACING",
+                "PARAGRAPH_INDENT"
+            ],
+            "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": 320
+    },
+    "96": {
+        "$extensions": {
+            "com.figma.scopes": [
+                "GAP",
+                "PARAGRAPH_SPACING",
+                "PARAGRAPH_INDENT"
+            ],
+            "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": 384
+    },
+    "0_5": {
+        "$extensions": {
+            "com.figma.scopes": [
+                "GAP",
+                "PARAGRAPH_SPACING",
+                "PARAGRAPH_INDENT"
+            ],
+            "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": 2
+    },
+    "1_5": {
+        "$extensions": {
+            "com.figma.scopes": [
+                "GAP",
+                "PARAGRAPH_SPACING",
+                "PARAGRAPH_INDENT"
+            ],
+            "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": 6
+    },
+    "2_5": {
+        "$extensions": {
+            "com.figma.scopes": [
+                "GAP",
+                "PARAGRAPH_SPACING",
+                "PARAGRAPH_INDENT"
+            ],
+            "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": 10
+    },
+    "3_5": {
+        "$extensions": {
+            "com.figma.scopes": [
+                "GAP",
+                "PARAGRAPH_SPACING",
+                "PARAGRAPH_INDENT"
+            ],
+            "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "number",
+        "$value": 14
+    }
+}

@@ -20,6 +20,9 @@ import com.jingom.calmong.core.designsystem.theme.shape.CalMongShapes
 import com.jingom.calmong.core.designsystem.theme.shape.DefaultCalMongShapes
 import com.jingom.calmong.core.designsystem.theme.shape.LocalCalMongShapes
 import com.jingom.calmong.core.designsystem.theme.shape.calMongMaterialShapes
+import com.jingom.calmong.core.designsystem.theme.spacing.CalMongSpacings
+import com.jingom.calmong.core.designsystem.theme.spacing.DefaultCalMongSpacings
+import com.jingom.calmong.core.designsystem.theme.spacing.LocalCalMongSpacings
 
 @Composable
 fun CalMongTheme(
@@ -47,6 +50,7 @@ fun CalMongTheme(
         LocalCalMongColorScheme provides colorScheme,
         LocalCalMongShapes provides DefaultCalMongShapes,
         LocalCalMongElevations provides elevations,
+        LocalCalMongSpacings provides DefaultCalMongSpacings,
     ) {
         MaterialTheme(
             colorScheme = materialColorScheme,
@@ -61,7 +65,8 @@ fun CalMongTheme(
  *
  * `CalMongTheme.colors.primary.background.default`,
  * `CalMongTheme.shapes.surface.card`,
- * `CalMongTheme.elevations.raised1`처럼 접근한다.
+ * `CalMongTheme.elevations.raised1`,
+ * `CalMongTheme.spacings.inset.default`처럼 접근한다.
  * Material3 컴포넌트는 [CalMongTheme]이 매핑해준 `MaterialTheme.colorScheme`을 그대로 쓰고,
  * CalMong 고유 토큰이 필요하면 이 accessor를 쓴다.
  */
@@ -80,6 +85,11 @@ object CalMongTheme {
         @Composable
         @ReadOnlyComposable
         get() = LocalCalMongElevations.current
+
+    val spacings: CalMongSpacings
+        @Composable
+        @ReadOnlyComposable
+        get() = LocalCalMongSpacings.current
 }
 
 /**
