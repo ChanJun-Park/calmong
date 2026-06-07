@@ -2,6 +2,10 @@
 
 색상을 3개 tier로 나눠 관리한다. 화면/컴포넌트는 **semantic 토큰만** 쓴다.
 
+색상별 의미, 사용 규칙, Compose 예시와 컴포넌트 조합은
+[`../COLOR_SYSTEM.md`](../COLOR_SYSTEM.md)를 기준으로 한다. 이 문서는 토큰 구조와
+Figma 동기화 절차를 설명한다.
+
 ```
 primitive (raw 팔레트)        →  semantic (의미 부여)         →  component
 Tailwind indigo/600 …            primary.background.default       Button 배경
@@ -30,7 +34,8 @@ Tailwind indigo/600 …            primary.background.default       Button 배�
   - `*.stroke.{divider|subtle|default|static}` · `brand.stroke.{default|subtle}`: 외곽선은 색이 직접 바뀌므로 각 stroke 변형이 상태별 **불투명** 색을 보유. `default`/`static`은 비텍스트 대비 3:1 충족, `divider`/`subtle`은 장식용 헤어라인.
 
 ### 콘텐츠 색 규칙 (onColor 없음)
-- 브랜드 채움 위 콘텐츠 = `brand.foreground.default` (채움 위에서 접근성 충족하도록 매핑됨)
+- 브랜드 채움 위 콘텐츠 = `primary.foreground.default` 또는
+  `secondary.foreground.default` (채움 위에서 접근성 충족하도록 매핑됨)
 - functional은 **`subtle` 배경 + `default` 텍스트** 패턴 권장 (솔리드 채움 위 텍스트는 지양 — 대비 한계)
 - 이미지/스크림/어두운 고정면 위 콘텐츠 = `neutral.foreground.static` (모드 독립 흰색)
 - `static`은 모드와 무관하게 동일(흰색). 테마 표면 위 본문은 `foreground.default`를 쓴다.
