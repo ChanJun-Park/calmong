@@ -1,6 +1,14 @@
 # Detekt 설정 (buildUponDefaultConfig = true)
 # 기본 규칙 위에 프로젝트 특화 예외만 명시. 필요해질 때 확장.
 
+complexity:
+  LongParameterList:
+    # Compose 컴포넌트는 onClick·modifier·다수의 옵션(intent/size/enabled/style)·content처럼
+    # 기본값 있는 파라미터가 많은 게 관용. 기본값 파라미터는 카운트에서 제외한다.
+    ignoreDefaultParameters: true
+    ignoreAnnotated:
+      - 'Composable'
+
 naming:
   FunctionNaming:
     ignoreAnnotated:
