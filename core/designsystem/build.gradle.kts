@@ -1,6 +1,7 @@
 plugins {
     id("calmong.android.library")
     id("calmong.android.library.compose")
+    alias(libs.plugins.paparazzi)
 }
 
 android {
