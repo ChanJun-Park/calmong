@@ -10,10 +10,6 @@ import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.style.ExperimentalFoundationStyleApi
 import androidx.compose.foundation.style.Style
 import androidx.compose.foundation.style.StyleScope
-import androidx.compose.foundation.style.disabled
-import androidx.compose.foundation.style.focused
-import androidx.compose.foundation.style.hovered
-import androidx.compose.foundation.style.pressed
 import androidx.compose.foundation.style.rememberUpdatedStyleState
 import androidx.compose.foundation.style.styleable
 import androidx.compose.foundation.style.then
@@ -21,19 +17,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.compositeOver
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.role
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
-import com.jingom.calmong.core.designsystem.theme.color.InteractionStates
 import com.jingom.calmong.core.designsystem.theme.style.CalMongPressEffect
-import com.jingom.calmong.core.designsystem.theme.style.colors
 import com.jingom.calmong.core.designsystem.theme.style.shapes
 import com.jingom.calmong.core.designsystem.theme.style.spacings
-import com.jingom.calmong.core.designsystem.theme.style.strokeWidths
 
 /**
  * 앱 공통 버튼 — calmong의 첫 Style API 기반 컴포넌트(PoC).
@@ -106,57 +97,8 @@ fun calMongButtonStyle(
         applyIntent(intent)
         applySize(size)
         fontWeight(FontWeight.Medium)
-
-        // state: 접근성 포커스 링 — stroke 토큰 조합(색=color 시스템, 너비=stroke 시스템)
-        focused {
-            borderColor(colors.primary.stroke.default.default)
-            borderWidth(strokeWidths.focus)
-        }
-        // state: 비활성
-        disabled { animate { alpha(DISABLED_ALPHA) } }
+        applyFocusAndDisabled()
     }
-
-/** intent 변형 — base 채움/콘텐츠 색 + (해당 시) 외곽선. hover/pressed는 [surfaceStates]가 stateLayer로. */
-private fun StyleScope.applyIntent(intent: CalMongButtonIntent) {
-    when (intent) {
-        CalMongButtonIntent.Primary ->
-            surfaceStates(
-                base = colors.primary.background.default,
-                content = colors.primary.foreground.default,
-                layer = colors.functional.stateLayer.solid,
-            )
-        CalMongButtonIntent.Secondary ->
-            surfaceStates(
-                base = colors.secondary.background.default,
-                content = colors.secondary.foreground.default,
-                layer = colors.functional.stateLayer.soft,
-            )
-        CalMongButtonIntent.Danger -> {
-            surfaceStates(
-                base = colors.functional.common.negative.subtle,
-                content = colors.functional.common.negative.default,
-                layer = colors.functional.stateLayer.soft,
-            )
-            borderColor(colors.functional.common.negative.default)
-            borderWidth(strokeWidths.default)
-        }
-        CalMongButtonIntent.Neutral -> {
-            surfaceStates(
-                base = colors.neutral.background.raised2,
-                content = colors.neutral.foreground.default,
-                layer = colors.functional.stateLayer.soft,
-            )
-            borderColor(colors.neutral.stroke.subtle.default)
-            borderWidth(strokeWidths.default)
-        }
-        CalMongButtonIntent.NeutralInverted ->
-            surfaceStates(
-                base = colors.neutral.background.inverted,
-                content = colors.neutral.foreground.inverted,
-                layer = colors.functional.stateLayer.solid,
-            )
-    }
-}
 
 /** size 변형 — 안쪽 여백(inset 토큰) + 글자 크기. */
 private fun StyleScope.applySize(size: CalMongButtonSize) {
@@ -175,21 +117,3 @@ private fun StyleScope.applySize(size: CalMongButtonSize) {
         }
     }
 }
-
-/**
- * 채움 표면의 base 색 + 콘텐츠 색을 세팅하고, hover/pressed를 [layer](stateLayer soft/solid)를
- * base 위에 합성한 색으로 표현한다. 우리 디자인 시스템의 "상태 = 반투명 오버레이" 규칙을
- * Style의 단일 색 모델에 맞춰 compositeOver로 평탄화한 것.
- */
-private fun StyleScope.surfaceStates(
-    base: Color,
-    content: Color,
-    layer: InteractionStates,
-) {
-    background(base)
-    contentColor(content)
-    hovered { animate { background(layer.hover.compositeOver(base)) } }
-    pressed { animate { background(layer.pressed.compositeOver(base)) } }
-}
-
-private const val DISABLED_ALPHA = 0.38f
